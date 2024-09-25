@@ -764,6 +764,12 @@ int main() {
 
     return 0;
 }
+
+output:
+Inorder Traversal: 4 2 5 1 3 
+Preorder Traversal: 1 2 4 5 3 
+Postorder Traversal: 4 5 2 3 1 
+Level Order Traversal: 1 2 3 4 5 
 ```
 
 ### 3.4 What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?
