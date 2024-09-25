@@ -42,16 +42,20 @@
 3.2. [What is binary search tree data structure? What are the applications for binary search trees?](#32-what-is-binary-search-tree-data-structure-what-are-the-applications-for-binary-search-trees)  
 3.3. [What are tree traversals?](#33-what-are-tree-traversals)  
 3.4. [What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?](#34-what-is-an-avl-tree-data-structure-its-operations-and-its-rotations-what-are-the-applications-for-avl-trees)  
+3.5. [Define Segment Tree data structure and its applications.](#35-define-segment-tree-data-structure-and-its-applications)  
+3.6. [Define Trie data structure and its applications.](#36-define-trie-data-structure-and-its-applications)  
+3.7. [What is a heap data structure?](#37-what-is-a-heap-data-structure)  
+  
 
 #### Hash Maps
-3.5. [What is hashmap in data structure?](#35-what-is-hashmap-in-data-structure)  
-3.6. [What is the requirement for an object to be used as key or value in HashMap?](#36-what-is-the-requirement-for-an-object-to-be-used-as-key-or-value-in-hashmap)  
-3.7. [How does HashMap handle collisions in Java?](#37-how-does-hashmap-handle-collisions-in-java)  
-3.8. [What is the time complexity of basic operations get() and put() in HashMap class?](#38-what-is-the-time-complexity-of-basic-operations-get-and-put-in-hashmap-class)  
+3.8. [What is hashmap in data structure?](#38-what-is-hashmap-in-data-structure)  
+3.9. [What is the requirement for an object to be used as key or value in HashMap?](#39-what-is-the-requirement-for-an-object-to-be-used-as-key-or-value-in-hashmap)  
+3.10. [How does HashMap handle collisions in Java?](#310-how-does-hashmap-handle-collisions-in-java)  
+3.11. [What is the time complexity of basic operations get() and put() in HashMap class?](#311-what-is-the-time-complexity-of-basic-operations-get-and-put-in-hashmap-class)  
 
 #### Graphs
-3.9. [What is graph data structure and its representations? What are the applications for graphs?](#39-what-is-graph-data-structure-and-its-representations-what-are-the-applications-for-graphs)  
-3.10. [What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?](#310-what-is-the-difference-between-the-breadth-first-search-bfs-and-depth-first-search-dfs)  
+3.12. [What is graph data structure and its representations? What are the applications for graphs?](#312-what-is-graph-data-structure-and-its-representations-what-are-the-applications-for-graphs)  
+3.13. [What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?](#313-what-is-the-difference-between-the-breadth-first-search-bfs-and-depth-first-search-dfs)  
 
 ### 4. Implementation Questions
 #### Array Operations
@@ -607,12 +611,69 @@ Following are some applications of queue data structure:
 
 
 ### 2.13 What is a deque data structure and its types? What are the applications for deque?
+A deque can be thought of as an array of items, but with one important difference: Instead of pushing and popping items off the end to make room, deques are designed to allow items to be inserted at either end. This property makes deques well-suited for performing tasks such as keeping track of inventory, scheduling tasks, or handling large amounts of data.
+
+<p align="center">
+    <img src="dsa_image/deque_data_structure.png" alt="Types of Data Structures" width="600" height="200"/>
+</p><br>
+
+There are two types of deque:
+
+- **Input Restricted Deque:** Insertion operations are performed at only one end while deletion is performed at both ends in the input restricted queue.
+
+<p align="center">
+    <img src="dsa_image/Input_Restricted_Deque.png" alt="Types of Data Structures" width="600" height="200"/>
+</p><br>
+
+- **Output Restricted Deque:** Deletion operations are performed at only one end while insertion is performed at both ends in the output restricted queue.
+
+<p align="center">
+    <img src="dsa_image/Output_Restricted_Deque.png" alt="Types of Data Structures" width="600" height="200"/>
+</p><br>
+
+Following are some real-time applications for deque data structure: 
+
+- It can be used as both stack and queue, as it supports all the operations for both data structures.
+- Web browser’s history can be stored in a deque.
+- Operating systems job scheduling algorithm.
 
 ### 2.14 What are some key operations performed on the Deque data structure?
+Following are the key operations available in a deque:
+
+- **insertFront()**: This adds an element to the front of the deque.
+- **insertLast()**: This adds an element to the rear of the deque.
+- **deleteFront()**: This deletes an element from the front of the deque.
+- **deleteLast()**: This deletes an element from the rear of the deque.
+- **getFront()**: This retrieves an element from the front of the deque.
+- **getRear()**: This retrieves an element from the rear of the deque.
+- **isEmpty()**: This checks whether the deque is empty or not.
+- **isFull()**: This checks whether the deque is full or not.
 
 ### 2.15 What is a priority queue? What are the applications for priority queue?
+Priority Queue is an abstract data type that is similar to a queue in that each element is assigned a priority value. The order in which elements in a priority queue are served is determined by their priority (i.e., the order in which they are removed). If the elements have the same priority, they are served in the order they appear in the queue.
+
+<p align="center">
+    <img src="dsa_image/Priority_Queue.png" alt="Types of Data Structures" width="300" height="400"/>
+</p><br>
+
+Following are some real-time applications for priority queue:
+
+- Used in graph algorithms like Dijkstra, Prim’s Minimum spanning tree etc.
+- Huffman code for data compression
+- Finding Kth Largest/Smallest element
 
 ### 2.16 Compare different implementations of priority queue.
+The following table contains an asymptotic analysis of different implementations of a priority queue:
+
+<div align="center">
+
+| Operations               | Peek    | Insert    | Delete    |
+|-------------------------|---------|-----------|-----------|
+| Linked List             | O(1)    | O(n)      | O(1)      |
+| Binary Heap             | O(1)    | O(log n)  | O(log n)  |
+| Binary Search Tree      | O(1)    | O(log n)  | O(log n)  |
+
+</div>
 
 ---
 
@@ -829,11 +890,80 @@ Following are some real-time applications for AVL tree data structures:
 - AVL trees are widely used in database applications where there are fewer insertions and deletions but frequent data lookups are required.
 - Apart from database applications, they are used in applications that require improved searching.
 
+### 3.5 Define Segment Tree data structure and its applications.
+A segment Tree is a binary tree that is used to store intervals or segments. The Segment Tree is made up of nodes that represent intervals. Segment Tree is used when there are multiple range queries on an array and changes to array elements.
+
+The segment tree of array A[7] will look like this:
+
+<p align="center">
+    <img src="dsa_image/Segment_Tree_data_structure.png" alt="Types of Data Structures" width="600" height="300"/>
+</p><br>
+
+
+Following are key operations performed on the Segment tree data structure:
+
+- Building Tree: In this step, we create the structure and initialize the segment tree variable.
+- Updating the Tree: In this step, we change the tree by updating the array value at a point or over an interval.
+- Querying Tree: This operation can be used to run a range query on the array.
+
+Following are real-time applications for Segment Tree:
+
+- Used to efficiently list all pairs of intersecting rectangles from a list of rectangles in the plane.
+- The segment tree has become popular for use in pattern recognition and image processing.
+- Finding range sum/product, range max/min, prefix sum/product, etc
+Computational geometry
+- Geographic information systems
+- Static and Dynamic RMQ (Range Minimum Query)
+- Storing segments in an arbitrary manner
+
+### 3.6 Define Trie data structure and its applications.
+### Trie Data Structure
+
+The word "Trie" is an abbreviation for "retrieval." Trie is a data structure that stores a set of strings as a sorted tree. Each node has the same number of pointers as the number of alphabet characters. It can look up a word in the dictionary by using its prefix. Assuming that all strings are formed from the letters 'a' to 'z' in the English alphabet, each trie node can have a maximum of 26 pointers.
+
+Trie is also referred to as the digital tree or the prefix tree. The key to which a node is connected is determined by its position in the Trie. Trie allows us to insert and find strings in O(L) time, where L is the length of a single word. This is clearly faster than BST. Because of how it is implemented, this is also faster than hashing. There is no need to compute a hash function, and there is no need to handle collisions (like we do in open addressing and separate chaining).
+
+<p align="center">
+    <img src="dsa_image/Trie_data_structure.png" alt="Types of Data Structures" width="600" height="500"/>
+</p><br>
+
+Another benefit of Trie is that we can easily print all words in alphabetical order, which is not easy with hashing. Trie can also perform prefix search (or auto-complete) efficiently.
+
+#### Advantages of Trie
+- **Fast Lookups**: Allows insertion and search operations in O(L) time.
+- **Alphabetical Order**: Easily print all words in alphabetical order.
+- **Prefix Search**: Efficiently performs prefix search (auto-complete).
+
+#### Disadvantages of Trie
+- **Memory Usage**: Requires a large amount of memory to store the strings due to excessive node pointers for each node.
+
+#### Real-Time Applications of Trie
+- **Auto-Complete and Search for Search Engines**
+- **Genome Analysis**
+- **Data Analytics**
+- **Browser History**
+- **Spell Checker**
+
+
+### 3.7 What is a heap data structure?
+Heap is a special tree-based non-linear data structure in which the tree is a complete binary tree. A binary tree is said to be complete if all levels are completely filled except possibly the last level and the last level has all elements as left as possible. Heaps are of two types:
+
+<p align="center">
+    <img src="dsa_image/MinHeapAndMaxHeap1.png" alt="Types of Data Structures" width="600" height="300"/>
+</p><br>
+
+- **Max-Heap:**
+  - In a Max-Heap the data element present at the root node must be the greatest among all the data elements present in the tree.
+  - This property should be recursively true for all sub-trees of that binary tree.
+
+- **Min-Heap:**
+  - In a Min-Heap the data element present at the root node must be the smallest (or minimum) among all the data elements present in the tree.
+  - This property should be recursively true for all sub-trees of that binary tree.
 
 ---
 ### Hash Maps
 
-### 3.5 What is hashmap in data structure?
+### 3.8 What is hashmap in data structure?
 For an object to be used as a key or value in a HashMap, it must meet a few important requirements:
 
 A **HashMap** in data structures is a data storage method that provides an efficient way to store and retrieve key-value pairs. It is a part of the **hash table** family, where the main feature is fast access to data by using a hash function to compute an index (or hash code) into an array of buckets or slots.
@@ -853,7 +983,7 @@ A **HashMap** in data structures is a data storage method that provides an effic
 - **Average Case**: O(1) for insertion, lookup, and deletion.
 - **Worst Case**: O(n) in the case of many collisions.
 
-### 3.6 What is the requirement for an object to be used as key or value in HashMap?
+### 3.9 What is the requirement for an object to be used as key or value in HashMap?
 
 #### Requirements for **Key**:
 1. **Unique**: Each key must be distinct; no duplicates allowed.
@@ -869,7 +999,7 @@ A **HashMap** in data structures is a data storage method that provides an effic
 - **Key**: Think of it like a person’s unique ID number.
 - **Value**: This can be the person’s name or address, which may change or be the same for different people.
 
-### 3.7 How does HashMap handle collisions in Java?
+### 3.10 How does HashMap handle collisions in Java?
 The `java.util.HashMap` class in Java uses the **chaining** method to handle collisions. 
 
 #### Chaining:
@@ -884,14 +1014,14 @@ The `java.util.HashMap` class in Java uses the **chaining** method to handle col
 #### Importance of Hashing Algorithm:
 - It is crucial to carefully select a good hashing algorithm to minimize the risk of collisions and maintain efficient performance.
 
-### 3.8 What is the time complexity of basic operations get() and put() in HashMap class?
+### 3.11 What is the time complexity of basic operations get() and put() in HashMap class?
 The average time complexity for `get()` and `put()` operations in a HashMap is O(1), but in the worst case (when many collisions occur), it can degrade to O(n).
 
 ---
 
 ### Graphs
 
-### 3.9 What is graph data structure and its representations? What are the applications for graphs?
+### 3.12 What is graph data structure and its representations? What are the applications for graphs?
 A graph is a type of non-linear data structure made up of nodes and edges. The nodes are also known as vertices, and edges are lines or arcs that connect any two nodes in the graph.
 
 <p align="center">
@@ -930,7 +1060,7 @@ The following are the two most common graph representations:
 One of the cons of this representation is that queries such as "Is there an edge from vertex u to vertex v?" are inefficient and take **O(V)** time in the worst case.
 
 
-### 3.10 What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?
+### 3.13 What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?
 
 <p align="center">
     <img src="dsa_image/BFS_vs_DFS.png" alt="Types of Data Structures" width="600" height="300"/>
