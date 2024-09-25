@@ -621,21 +621,64 @@ Tree traversals are methods for visiting all nodes in a tree. Common types inclu
 ### 3.4 What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?
 An AVL tree is a self-balancing binary search tree where the difference in heights between left and right subtrees is at most one. Operations include insertion, deletion, and rotations (single and double) to maintain balance. Applications include databases and memory management.
 
+---
 ### Hash Maps
 
 ### 3.5 What is hashmap in data structure?
-A hashmap is a data structure that stores key-value pairs, allowing for efficient data retrieval based on the key. It uses a hash function to compute the index for each key.
+For an object to be used as a key or value in a HashMap, it must meet a few important requirements:
+
+A **HashMap** in data structures is a data storage method that provides an efficient way to store and retrieve key-value pairs. It is a part of the **hash table** family, where the main feature is fast access to data by using a hash function to compute an index (or hash code) into an array of buckets or slots.
+
+#### Key Concepts:
+
+- **Key-Value Pair**: Each entry in the HashMap is stored as a key-value pair, where the key is unique, and the value is associated with that key.
+- **Hash Function**: A function that takes the key as input and generates a unique hash code (index) to store the value in an array or bucket.
+- **Collision Handling**: Sometimes, different keys can produce the same hash code (collision). Techniques like **chaining** (storing multiple entries in the same bucket) or **open addressing** (finding another available slot) are used to handle collisions.
+
+#### Operations:
+- **Insertion**: Adds a key-value pair to the map.
+- **Lookup**: Retrieves the value associated with a given key.
+- **Deletion**: Removes the key-value pair from the map.
+
+#### Time Complexity:
+- **Average Case**: O(1) for insertion, lookup, and deletion.
+- **Worst Case**: O(n) in the case of many collisions.
 
 ### 3.6 What is the requirement for an object to be used as key or value in HashMap?
-Keys in a HashMap must be unique and immutable (e.g., strings, numbers). Values can be mutable or immutable and can be of any data type.
+
+#### Requirements for **Key**:
+1. **Unique**: Each key must be distinct; no duplicates allowed.
+2. **Immutable**: Keys should not change after being added to the HashMap.
+3. **`equals()` Method**: Must have a properly defined method to check if two keys are equal.
+4. **`hashCode()` Method**: Should implement a method to generate a unique integer code for the key.
+
+#### Requirements for **Value**:
+1. **Any Object**: Values can be of any type, including duplicates.
+2. **No Special Requirements**: Values don’t need unique identifiers or special methods.
+
+#### Example:
+- **Key**: Think of it like a person’s unique ID number.
+- **Value**: This can be the person’s name or address, which may change or be the same for different people.
 
 ### 3.7 How does HashMap handle collisions in Java?
-HashMap handles collisions using two methods:
-- **Chaining:** Each index points to a linked list of entries that hash to the same index.
-- **Open addressing:** It finds the next available index using probing techniques.
+The `java.util.HashMap` class in Java uses the **chaining** method to handle collisions. 
+
+#### Chaining:
+- When a new value with an existing key is added, it is stored in a **linked list** (or chain) at the corresponding bucket for that key.
+- This linked list contains the new value along with the existing values.
+
+#### Worst-Case Scenario:
+- In the worst case, all keys might generate the same hash code, causing the hash table to effectively behave like a linked list.
+- **Performance Impact**: 
+  - In this scenario, searching for a value will take **O(n)** time instead of the expected **O(1)** time due to the linear nature of linked lists.
+  
+#### Importance of Hashing Algorithm:
+- It is crucial to carefully select a good hashing algorithm to minimize the risk of collisions and maintain efficient performance.
 
 ### 3.8 What is the time complexity of basic operations get() and put() in HashMap class?
 The average time complexity for `get()` and `put()` operations in a HashMap is O(1), but in the worst case (when many collisions occur), it can degrade to O(n).
+
+---
 
 ### Graphs
 
