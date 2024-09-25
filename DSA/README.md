@@ -122,18 +122,49 @@ The main difference is that the storage structure has data stored in the memory 
 ### Arrays
 
 #### 2.1 What is an array data structure? What are the applications of arrays?
-An array is a collection of elements identified by index or key. Applications of arrays include storing a collection of data, implementing other data structures (like stacks and queues), and performing mathematical operations on datasets.
+An array data structure is a data structure that is used to store data in a way that is efficient and easy to access. It is similar to a list in that it stores data in a sequence. However, an array data structure differs from a list in that it can hold much more data than a list can. An array data structure is created by combining several arrays together. Each array is then given a unique identifier, and each array’s data is stored in the order in which they are created.
 
+<p align="center">
+    <img src="dsa_image/array_data_structure.png" alt="Types of Data Structures" width="400" height="170"/>
+</p><br>
+
+Array data structures are commonly used in databases and other computer systems to store large amounts of data efficiently. They are also useful for storing information that is frequently accessed, such as large amounts of text or images.
 #### 2.2 Elaborate on different types of array data structure.
-Different types of arrays include:
-- **Single-dimensional arrays:** A linear list of elements.
-- **Multi-dimensional arrays:** Arrays that contain other arrays, such as matrices (2D arrays) or tensors (nD arrays).
-- **Dynamic arrays:** Arrays that can grow or shrink in size during runtime, such as ArrayLists in Java.
+There are several different types of arrays:
+
+- **One-dimensional array:** A one-dimensional array stores its elements in contiguous memory locations, accessing them using a single index value. It is a linear data structure holding all the elements in a sequence.
+
+<p align="center">
+    <img src="dsa_image/One-dimensional_array.png" alt="Types of Data Structures" width="400" height="100"/>
+</p><br>
+
+- **Two-dimensional array:** A two-dimensional array is a tabular array that includes rows and columns and stores data. An M × N two-dimensional array is created by grouping M rows and N columns into N columns and rows.
+
+<p align="center">
+    <img src="dsa_image/Two-dimensional_array.png" alt="Types of Data Structures" width="300" height="200"/>
+</p><br>
+
+- **Three-dimensional array:** A three-dimensional array is a grid that has rows, columns, and depth as a third dimension. It comprises a cube with rows, columns, and depth as a third dimension. The three-dimensional array has three subscripts for a position in a particular row, column, and depth. Depth (dimension or layer) is the first index, row index is the second index, and column index is the third index.
+
+<p align="center">
+    <img src="dsa_image/Three-dimensional_array.png" alt="Types of Data Structures" width="350" height="250"/>
+</p><br>
+
 
 ### Linked Lists
 
 #### 2.3 What is a linked list data structure? What are the applications for the linked list?
-A linked list is a linear data structure where elements (nodes) are connected using pointers. Applications include dynamic memory allocation, implementing stacks and queues, and maintaining a list of items that can grow or shrink in size.
+A linked list can be thought of as a series of linked nodes (or items) that are connected by links (or paths). Each link represents an entry into the linked list, and each entry points to the next node in the sequence. The order in which nodes are added to the list is determined by the order in which they are created.
+<p align="center">
+    <img src="dsa_image/linked_list.png" alt="Types of Data Structures" width="380" height="180"/>
+</p><br>
+
+Following are some applications of linked list data structure:
+
+- Stack, Queue, binary trees, and graphs are implemented using linked lists.
+- Dynamic management for Operating System memory.
+- Round robin scheduling for operating system tasks.
+- Forward and backward operation in the browser.
 
 #### 2.4 Elaborate on different types of Linked List data structures.
 Types of linked lists include:
