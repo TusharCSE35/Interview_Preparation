@@ -184,7 +184,6 @@ A singly linked list is a data structure used to store multiple items. Each item
 </p><br>
 
 The key for a singly linked list can be any data type, such as an integer or a string. Singly linked lists are useful for storing various types of data, including grocery lists, patient records, and time-sensitive data like stock prices or flight schedules.
-
 #### C++ Implementation of Singly Linked List
 
 ```cpp
@@ -286,6 +285,7 @@ int main() {
     
     return 0;
 }
+```
 
 #### Singly Linked List Complexity
 Time Complexity:
