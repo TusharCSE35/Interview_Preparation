@@ -80,16 +80,32 @@
 A data structure is a mechanical or logical way that data is organized within a program. The organization of data is what determines how a program performs. There are many types of data structures, each with its own uses. When designing code, we need to pay particular attention to the way data is structured. If data isn't stored efficiently or correctly structured, then the overall performance of the code will be reduced.
 
 ### 1.2 Why create Data Structures?
-Creating data structures allows developers to optimize the performance of algorithms by organizing data in a way that facilitates efficient access and manipulation.
+Data structures serve a number of important functions in a program. They ensure that each line of code performs its function correctly and efficiently, they help the programmer identify and fix problems with his/her code, and they help to create a clear and organized code base.
 
 ### 1.3 What are some applications of Data Structures?
-Data structures are used in a wide range of applications, from simple data management tasks to complex algorithms in computer graphics, networking, and artificial intelligence.
+Following are some real-time applications of data structures:
+
+
+- Decision Making
+- Genetics
+- Image Processing
+- Blockchain
+- Numerical and Statistical Analysis
+- Compiler Design
+- Database Design and many more
 
 ### 1.4 Explain the process behind storing a variable in memory.
-When a variable is declared, the compiler allocates a specific amount of memory for it, and the variable's value is stored in that allocated memory location. The memory address of the variable is used to access its value during program execution.
+- A variable is stored in memory based on the amount of memory that is needed. Following are the steps followed to store a variable:
+  - The required amount of memory is assigned first.
+  - Then, it is stored based on the data structure being used.
+- Using concepts like dynamic allocation ensures high efficiency and that the storage units can be accessed based on requirements in real-time.
 
 ### 1.5 Can you explain the difference between file structure and storage structure?
-File structure refers to how data is organized in files on a storage medium, while storage structure refers to how data is stored in memory during program execution. File structures can include formats like text files, binary files, etc., whereas storage structures include data types like arrays, linked lists, etc.
+- **File Structure:** Representation of data into secondary or auxiliary memory, such as hard disks or pen drives, that stores data which remains intact until manually deleted.
+
+- **Storage Structure:** In this type, data is stored in the main memory (RAM) and is deleted once the function that uses this data is completely executed.
+
+The main difference is that the storage structure has data stored in the memory of the computer system, whereas the file structure has the data stored in auxiliary memory.
 
 ### 1.6 Describe the types of Data Structures.
 Data structures can be classified into two main categories:
