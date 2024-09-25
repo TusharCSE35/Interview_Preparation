@@ -155,6 +155,7 @@ There are several different types of arrays:
     <img src="dsa_image/Three-dimensional_array.png" alt="Types of Data Structures" width="350" height="250"/>
 </p><br>
 
+---
 
 ### Linked Lists
 
@@ -358,6 +359,7 @@ Space Complexity:
 | Memory utilization is inefficient in the case of an array. | Memory utilization is more efficient in the case of linked lists. |
 | Operations like insertion and deletion take longer in an array. | Operations like insertion and deletion are faster in a linked list. |
 
+---
 
 ### Stacks
 
@@ -551,7 +553,12 @@ int main() {
     return 0;
 }
 ```
+**Explanation:**
+- Push: Add the element to the first queue (q1).
+- Pop: Transfer all elements except the last one from q1 to q2, then pop the last element from q1. Swap the two queues (q1 becomes q2 and vice versa).
+- Top: Same as pop, but instead of removing the last element, we retrieve it.
 
+---
 ### Queues
 
 ### 2.10 What is a queue data structure? What are the applications of queue?
