@@ -108,9 +108,12 @@ Following are some real-time applications of data structures:
 The main difference is that the storage structure has data stored in the memory of the computer system, whereas the file structure has the data stored in auxiliary memory.
 
 ### 1.6 Describe the types of Data Structures.
-Data structures can be classified into two main categories:
-- **Primitive Data Structures:** These are basic data types like integers, floats, characters, and booleans.
-- **Non-Primitive Data Structures:** These include more complex types like arrays, linked lists, stacks, queues, trees, and graphs.
+<div style="text-align: center;">
+    <img src="dsa_image/types_of_Data_Structures.png" alt="Types of Data Structures" width="450" height="170"/>
+</div><br>
+
+- **Linear Data Structure:** A data structure that includes data elements arranged sequentially or linearly, where each element is connected to its previous and next nearest elements, is referred to as a linear data structure. Arrays and linked lists are two examples of linear data structures.
+- **Non-Linear Data Structure:** Non-linear data structures are data structures in which data elements are not arranged linearly or sequentially. We cannot walk through all elements in one pass in a non-linear data structure, as in a linear data structure. Trees and graphs are two examples of non-linear data structures.
 
 ---
 
