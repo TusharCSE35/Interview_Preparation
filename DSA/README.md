@@ -607,19 +607,208 @@ Following are some applications of queue data structure:
 ### Trees
 
 ### 3.1 What is a binary tree data structure? What are the applications for binary trees?
-A binary tree is a tree data structure where each node has at most two children. Applications include expression parsing, binary search trees, and hierarchical data representation.
+
+A binary tree is a data structure that is used to organize data in a way that allows for efficient retrieval and manipulation. It is a data structure that uses two nodes, called leaves and nodes, to represent the data. The leaves represent the data and the nodes represent the relationships between the leaves. Each node has two children, called siblings, and each child has one parent. The parent is the node that is closest to the root of the tree. When a node is deleted from the tree, it is deleted from both its child and its parent.
+
+Following are some applications for binary tree data structure:
+
+<p align="center">
+    <img src="dsa_image/binary_tree_data_structure.png" alt="Types of Data Structures" width="600" height="500"/>
+</p><br>
+
+- It's widely used in computer networks for storing routing table information.
+- Decision Trees.
+- Expression Evaluation.
+- Database indices.
 
 ### 3.2 What is binary search tree data structure? What are the applications for binary search trees?
-A binary search tree (BST) is a binary tree where the left child contains nodes with values less than the parent node, and the right child contains nodes with values greater than the parent node. Applications include efficient searching, insertion, and deletion operations.
+A binary search tree is a data structure that stores items in sorted order. In a binary search tree, each node stores a key and a value. The key is used to access the item and the value is used to determine whether the item is present or not. The key can be any type of value such as an integer, floating point number, character string, or even a combination of these types. The value can be any type of items such as an integer, floating point number, character string, or even a combination of these types. When a node is added to the tree, its key is used to access the item stored at that node. When a node is removed from the tree, its key is used to access the item stored at that node.
+
+A binary search tree is a special type of binary tree that has a specific order of elements in it. It has three basic qualities:
+
+- All elements in the left subtree of a node should have a value less than or equal to the parent node's value, and
+- All elements in the right subtree of a node should have a value greater than or equal to the parent node's value.
+- Both the left and right subtrees must be binary search trees too.
+
+<p align="center">
+    <img src="dsa_image/binary_search_tree_data_structure.png" alt="Types of Data Structures" width="600" height="300"/>
+</p><br>
+
+Following are some applications for binary tree data structure:
+
+- It is used for indexing and multi-level indexing.
+- It is used for implementing various search algorithms.
+- It is helpful in organizing a sorted stream of data.
 
 ### 3.3 What are tree traversals?
-Tree traversals are methods for visiting all nodes in a tree. Common types include:
-- **Inorder:** Left subtree, root, right subtree.
-- **Preorder:** Root, left subtree, right subtree.
-- **Postorder:** Left subtree, right subtree, root.
+
+Tree traversals are methods for visiting all the nodes in a tree data structure in a specific order. They are essential for performing operations like searching, inserting, and deleting nodes. The main types of tree traversals include:
+
+<p align="center">
+    <img src="dsa_image/tree_traversals.png" alt="Types of Data Structures" width="600" height="400"/>
+</p><br>
+
+#### In-Order Traversal:
+- **Definition**: In this method, the nodes are visited in the order of left subtree, root node, and then right subtree.
+- **Result**: For binary search trees, this traversal results in the nodes being visited in ascending order.
+- **Example Order**: Left, Root, Right.
+
+#### Pre-Order Traversal:
+- **Definition**: Nodes are visited in the order of root node, left subtree, and then right subtree.
+- **Result**: This traversal is often used to create a copy of the tree or to get a prefix expression (Polish notation).
+- **Example Order**: Root, Left, Right.
+
+#### Post-Order Traversal:
+- **Definition**: In this traversal, nodes are visited in the order of left subtree, right subtree, and then root node.
+- **Result**: This is useful for deleting a tree or for obtaining a postfix expression (Reverse Polish notation).
+- **Example Order**: Left, Right, Root.
+
+#### Level-Order Traversal:
+- **Definition**: This method visits all the nodes at the present depth level before moving on to nodes at the next depth level. It is typically implemented using a queue.
+- **Result**: This traversal processes nodes level by level, which can be useful for certain applications.
+- **Example Order**: Level by level from top to bottom.
+
+### Summary Table
+
+| Traversal Type | Order of Visit         | Common Use Cases                         |
+|----------------|------------------------|-----------------------------------------|
+| In-Order       | Left, Root, Right      | Retrieve elements in ascending order (BST) |
+| Pre-Order      | Root, Left, Right      | Copying tree, prefix expression         |
+| Post-Order     | Left, Right, Root      | Deleting tree, postfix expression       |
+| Level-Order    | Level by level         | Level order printing                    |
+
+Tree traversals are fundamental to various tree-related algorithms and applications, making them a crucial concept in data structures.
+
+#### C++ Code Example for Tree Traversals
+
+```cpp
+#include <iostream>
+#include <queue>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+    
+    Node(int value) : data(value), left(nullptr), right(nullptr) {}
+};
+
+// Inorder Traversal
+void inorder(Node* root) {
+    if (root != nullptr) {
+        inorder(root->left);
+        cout << root->data << " ";
+        inorder(root->right);
+    }
+}
+
+// Preorder Traversal
+void preorder(Node* root) {
+    if (root != nullptr) {
+        cout << root->data << " ";
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+
+// Postorder Traversal
+void postorder(Node* root) {
+    if (root != nullptr) {
+        postorder(root->left);
+        postorder(root->right);
+        cout << root->data << " ";
+    }
+}
+
+// Level Order Traversal
+void levelOrder(Node* root) {
+    if (root == nullptr) return;
+    
+    queue<Node*> q;
+    q.push(root);
+    
+    while (!q.empty()) {
+        Node* current = q.front();
+        cout << current->data << " ";
+        q.pop();
+        
+        if (current->left) q.push(current->left);
+        if (current->right) q.push(current->right);
+    }
+}
+
+int main() {
+    // Create a simple tree
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+    
+    cout << "Inorder Traversal: ";
+    inorder(root);
+    cout << endl;
+
+    cout << "Preorder Traversal: ";
+    preorder(root);
+    cout << endl;
+
+    cout << "Postorder Traversal: ";
+    postorder(root);
+    cout << endl;
+
+    cout << "Level Order Traversal: ";
+    levelOrder(root);
+    cout << endl;
+
+    return 0;
+}
+```
 
 ### 3.4 What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?
-An AVL tree is a self-balancing binary search tree where the difference in heights between left and right subtrees is at most one. Operations include insertion, deletion, and rotations (single and double) to maintain balance. Applications include databases and memory management.
+AVL trees are height-balancing binary search trees named after their inventors Adelson, Velski, and Landis. The AVL tree compares the heights of the left and right subtrees and ensures that the difference is less than one. This distinction is known as the Balance Factor.
+
+**BalanceFactor = height(left-subtree) - height(right-subtree)**
+
+<p align="center">
+    <img src="dsa_image/AVL_Tree.png" alt="Types of Data Structures" width="600" height="400"/>
+</p><br>
+
+#### Operations on AVL Trees
+
+We can perform the following two operations on an AVL tree:
+
+1. **Insertion:**  
+   Insertion in an AVL tree is done in the same way as in a binary search tree. However, it may cause a violation of the AVL tree property, requiring the tree to be balanced. Rotations can be used to balance the tree.
+
+2. **Deletion:**  
+   Deletion can also be performed in the same manner as in a binary search tree. Because deletion can disrupt the tree's balance, various types of rotations are used to rebalance it.
+
+#### Rotations in AVL Trees
+
+An AVL tree can balance itself by performing the following four rotations:
+
+- **Left Rotation:**  
+  When a node is inserted into the right subtree of the right subtree and the tree becomes unbalanced, we perform a single left rotation.
+
+- **Right Rotation:**  
+  If a node is inserted in the left subtree of the left subtree, the AVL tree may become unbalanced. The tree then requires right rotation.
+
+- **Left-Right Rotation:**  
+  The RR rotation is performed first on the subtree, followed by the LL rotation on the entire tree.
+
+- **Right-Left Rotation:**  
+  The LL rotation is performed first on the subtree, followed by the RR rotation on the entire tree.
+
+#### Applications of AVL Trees
+
+Following are some real-time applications for AVL tree data structures:
+
+- AVL trees are typically used for in-memory sets and dictionaries.
+- AVL trees are widely used in database applications where there are fewer insertions and deletions but frequent data lookups are required.
+- Apart from database applications, they are used in applications that require improved searching.
+
 
 ---
 ### Hash Maps
@@ -683,11 +872,63 @@ The average time complexity for `get()` and `put()` operations in a HashMap is O
 ### Graphs
 
 ### 3.9 What is graph data structure and its representations? What are the applications for graphs?
-A graph is a collection of nodes (vertices) connected by edges. It can be represented using adjacency matrices or adjacency lists. Applications include social networks, transportation networks, and network routing.
+A graph is a type of non-linear data structure made up of nodes and edges. The nodes are also known as vertices, and edges are lines or arcs that connect any two nodes in the graph.
+
+<p align="center">
+    <img src="dsa_image/graph_data_structure.png" alt="Types of Data Structures" width="600" height="270"/>
+</p><br>
+
+The following are the two most common graph representations:
+
+1. **Adjacency Matrix**: 
+   - An adjacency matrix is a two-dimensional array with dimensions \( V \times V \), where \( V \) is the number of vertices in a graph.
+   - This representation is simple to implement and easy to understand.
+   - It takes **O(1)** time to remove an edge.
+   - Queries to check whether there is an edge from vertex 'u' to vertex 'v' are efficient and can be completed in **O(1)** time.
+
+<p align="center">
+    <img src="dsa_image/Adjacency_Matrix.png" alt="Types of Data Structures" width="600" height="270"/>
+</p><br>
+
+ - **Cons**:
+     - Even if the graph is sparse (has fewer edges), it still occupies the same amount of space.
+     - Adding a vertex takes **O(V²)** time.
+     - It takes **O(V)** time to compute all of a vertex's neighbors, which is not very efficient.
+
+2. **Adjacency List**:
+   - In this method, each node holds a list of nodes that are directly connected to that vertex.
+   - Each node at the end of the list is connected with null values to indicate that it is the last node in the list.
+   - This representation saves space, using **O(|V| + |E|)**, where \(|V|\) is the number of vertices and \(|E|\) is the number of edges.
+   - In the worst-case scenario, a graph can have \( C(V, 2) \) edges, which consumes **O(V²)** space.
+   - It is simpler to add a vertex, and it takes the least amount of time to compute all of a vertex's neighbors.     
+
+   
+<p align="center">
+    <img src="dsa_image/Adjacency_List.png" alt="Types of Data Structures" width="600" height="270"/>
+</p><br>
+
+One of the cons of this representation is that queries such as "Is there an edge from vertex u to vertex v?" are inefficient and take **O(V)** time in the worst case.
+
 
 ### 3.10 What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?
-- **BFS:** Explores nodes layer by layer, uses a queue, and finds the shortest path in unweighted graphs.
-- **DFS:** Explores as far as possible along a branch before backtracking, uses a stack or recursion, and can find a path but does not guarantee the shortest.
+
+<p align="center">
+    <img src="dsa_image/BFS_vs_DFS.png" alt="Types of Data Structures" width="600" height="300"/>
+</p><br>
+
+
+| Breadth First Search (BFS) | Depth First Search (DFS) |
+|-----------------------------|---------------------------|
+| It stands for “Breadth First Search.” | It stands for “Depth First Search.” |
+| BFS finds the shortest path using the Queue data structure. | DFS finds the shortest path using the Stack data structure. |
+| We walk through all nodes on the same level before moving to the next level in BFS. | DFS begins at the root node and proceeds as far as possible through the nodes until reaching a node with no unvisited nearby nodes. |
+| When compared to DFS, BFS is slower. | When compared to BFS, DFS is faster. |
+| BFS performs better when the target is close to the source. | DFS performs better when the target is far from the source. |
+| BFS requires more memory. | DFS requires less memory. |
+| Nodes that have been traversed multiple times are removed from the queue. | When there are no more nodes to visit, the visited nodes are added to the stack and then removed. |
+| Backtracking is not an option in BFS. | The DFS algorithm is a recursive algorithm that employs the concept of backtracking. |
+| It is based on the FIFO principle (First In First Out). | It is based on the LIFO principle (Last In First Out). |
+
 
 ---
 
