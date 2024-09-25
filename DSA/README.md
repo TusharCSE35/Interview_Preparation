@@ -29,6 +29,7 @@
 #### Queues
 2.10. [What is a queue data structure? What are the applications of queue?](#210-what-is-a-queue-data-structure-what-are-the-applications-of-queue)  
 2.11. [What are different operations available in queue data structure?](#211-what-are-different-operations-available-in-queue-data-structure)  
+2.12. [Differentiate between stack and queue data structure](#212-differentiate-between-stack-and-queue-data-structure)
 
 ### 3. Advanced Data Structures
 #### Trees
@@ -562,14 +563,35 @@ int main() {
 ### Queues
 
 ### 2.10 What is a queue data structure? What are the applications of queue?
-A queue is a linear data structure that follows the First In First Out (FIFO) principle. Applications include scheduling processes in operating systems, managing requests in servers, and breadth-first search algorithms.
+
+A queue is a linear data structure that allows users to store items in a list in a systematic manner. The items are added to the queue at the rear end until they are full, at which point they are removed from the queue from the front. Queues are commonly used in situations where the users want to hold items for a long period of time, such as during a checkout process. A good example of a queue is any queue of customers for a resource where the first consumer is served first.
+
+<p align="center">
+    <img src="dsa_image/queue_data_structure.png" alt="Types of Data Structures" width="600" height="250"/>
+</p><br>
+
+Following are some applications of queue data structure:
+
+- Breadth-first search algorithm in graphs
+- **Operating system:** job scheduling operations, Disk scheduling, CPU scheduling etc.
+- Call management in call centres
 
 ### 2.11 What are different operations available in queue data structure?
-Operations on queues include:
-- **Enqueue:** Add an item to the back of the queue.
-- **Dequeue:** Remove the item from the front of the queue.
-- **Front:** View the item at the front of the queue without removing it.
-- **isEmpty:** Check if the queue is empty.
+
+- **enqueue:** This adds an element to the rear end of the queue.  Overflow conditions occur if the queue is full.
+- **dequeue:** This removes an element from the front end of the queue. Underflow conditions occur if the queue is empty.
+- **isEmpty:** This returns true if the queue is empty or else false.
+- **rear:** This returns the rear end element without removing it.
+- **front:** This returns the front-end element without removing it.
+- **size:** This returns the size of the queue.
+
+### 2.12 Differentiate between stack and queue data structure
+
+<p align="center">
+    <img src="dsa_image/stack_and_queue_data_structure.png" alt="Types of Data Structures" width="600" height="270"/>
+</p><br>
+
+
 
 ---
 
