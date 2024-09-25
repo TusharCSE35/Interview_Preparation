@@ -29,7 +29,12 @@
 #### Queues
 2.10. [What is a queue data structure? What are the applications of queue?](#210-what-is-a-queue-data-structure-what-are-the-applications-of-queue)  
 2.11. [What are different operations available in queue data structure?](#211-what-are-different-operations-available-in-queue-data-structure)  
-2.12. [Differentiate between stack and queue data structure](#212-differentiate-between-stack-and-queue-data-structure)
+2.12. [Differentiate between stack and queue data structure](#212-differentiate-between-stack-and-queue-data-structure)  
+2.13. [What is a deque data structure and its types? What are the applications for deque?](#213-what-is-a-deque-data-structure-and-its-types-what-are-the-applications-for-deque)  
+2.14. [What are some key operations performed on the Deque data structure?](#214-what-are-some-key-operations-performed-on-the-deque-data-structure)  
+2.15. [What is a priority queue? What are the applications for priority queue?](#215-what-is-a-priority-queue-what-are-the-applications-for-priority-queue)  
+2.16. [Compare different implementations of priority queue.](#216-compare-different-implementations-of-priority-queue)
+
 
 ### 3. Advanced Data Structures
 #### Trees
@@ -599,6 +604,15 @@ Following are some applications of queue data structure:
 | Delete operation in Stack is known as pop.                         | Delete operation in Queue is known as dequeue.                       |
 | Only one pointer is available for both addition and deletion: `top()` | Two pointers are available for addition and deletion: `front()` and `rear()` |
 | Used in solving recursion problems.                                | Used in solving sequential processing problems.                      |
+
+
+### 2.13 What is a deque data structure and its types? What are the applications for deque?
+
+### 2.14 What are some key operations performed on the Deque data structure?
+
+### 2.15 What is a priority queue? What are the applications for priority queue?
+
+### 2.16 Compare different implementations of priority queue.
 
 ---
 
