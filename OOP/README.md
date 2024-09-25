@@ -1,77 +1,224 @@
-# Object-Oriented Programming (OOPs)
+# Data Structures Interview Question
 
 ## Table of Contents
 
-1. **Object-Oriented Programming (OOPs) Overview**
-   - 1.1 [What is the need for OOPs?](#what-is-the-need-for-oops)
-   - 1.2 [What are some major Object-Oriented Programming languages?](#what-are-some-major-object-oriented-programming-languages)
-  
-2. **Other Programming Paradigms**
-   - 2.1 [What are some other programming paradigms other than OOPs?](#what-are-some-other-programming-paradigms-other-than-oops)
-   - 2.2 [What is meant by Structured Programming?](#what-is-meant-by-structured-programming)
+### 1. Introduction
+1.1. [What are Data Structures?](#11-what-are-data-structures)  
+1.2. [Why create Data Structures?](#12-why-create-data-structures)  
+1.3. [What are some applications of Data Structures?](#13-what-are-some-applications-of-data-structures)  
+1.4. [Explain the process behind storing a variable in memory.](#14-explain-the-process-behind-storing-a-variable-in-memory)  
+1.5. [Can you explain the difference between file structure and storage structure?](#15-can-you-explain-the-difference-between-file-structure-and-storage-structure)  
+1.6. [Describe the types of Data Structures?](#16-describe-the-types-of-data-structures)
 
-3. **Key Features and Advantages of OOPs**
-   - 3.1 [What are the main features of OOPs?](#what-are-the-main-features-of-oops)
-   - 3.2 [What are some advantages of using OOPs?](#what-are-some-advantages-of-using-oops)
-   - 3.3 [Why is OOPs so popular?](#why-is-oops-so-popular)
-   - 3.4 [What is meant by the term OOPs?](#what-is-meant-by-the-term-oops)
+### 2. Basic Data Structures
+#### Arrays
+2.1. [What is an array data structure? What are the applications of arrays?](#21-what-is-an-array-data-structure-what-are-the-applications-of-arrays)  
+2.2. [Elaborate on different types of array data structure.](#22-elaborate-on-different-types-of-array-data-structure)  
 
-4. **Access Specifiers**
-   - 4.1 [What are access specifiers and what is their significance?](#what-are-access-specifiers-and-what-is-their-significance)
+#### Linked Lists
+2.3. [What is a linked list data structure? What are the applications for the linked list?](#23-what-is-a-linked-list-data-structure-what-are-the-applications-for-the-linked-list)  
+2.4. [Elaborate on different types of Linked List data structures.](#24-elaborate-on-different-types-of-linked-list-data-structures)  
+2.5. [Difference between Array and Linked List.](#25-difference-between-array-and-linked-list)  
 
-5. **Inheritance in OOPs**
-   - 5.1 [Are there any limitations of Inheritance?](#are-there-any-limitations-of-inheritance)
-   - 5.2 [What are the various types of inheritance?](#what-are-the-various-types-of-inheritance)
-   - 5.3 [What is a subclass?](#what-is-a-subclass)
-   - 5.4 [Define a superclass?](#define-a-superclass)
+#### Stacks
+2.6. [What is a stack data structure? What are the applications of stack?](#26-what-is-a-stack-data-structure-what-are-the-applications-of-stack)  
+2.7. [What are different operations available in stack data structure?](#27-what-are-different-operations-available-in-stack-data-structure)  
+2.8. [How to implement a queue using stack?](#28-how-to-implement-a-queue-using-stack)  
+2.9. [How do you implement stack using queues?](#29-how-do-you-implement-stack-using-queues)  
 
-6. **Interfaces and Abstract Classes**
-   - 6.1 [What is an interface?](#what-is-an-interface)
-   - 6.2 [What is an abstract class?](#what-is-an-abstract-class)
-   - 6.3 [How is an abstract class different from an interface?](#how-is-an-abstract-class-different-from-an-interface)
+#### Queues
+2.10. [What is a queue data structure? What are the applications of queue?](#210-what-is-a-queue-data-structure-what-are-the-applications-of-queue)  
+2.11. [What are different operations available in queue data structure?](#211-what-are-different-operations-available-in-queue-data-structure)  
 
-7. **Polymorphism**
-   - 7.1 [What is meant by static polymorphism?](#what-is-meant-by-static-polymorphism)
-   - 7.2 [What is meant by dynamic polymorphism?](#what-is-meant-by-dynamic-polymorphism)
-   - 7.3 [What is the difference between overloading and overriding?](#what-is-the-difference-between-overloading-and-overriding)
-   - 7.4 [What is Compile time Polymorphism and how is it different from Runtime Polymorphism?](#what-is-compile-time-polymorphism-and-how-is-it-different-from-runtime-polymorphism)
+### 3. Advanced Data Structures
+#### Trees
+3.1. [What is a binary tree data structure? What are the applications for binary trees?](#31-what-is-a-binary-tree-data-structure-what-are-the-applications-for-binary-trees)  
+3.2. [What is binary search tree data structure? What are the applications for binary search trees?](#32-what-is-binary-search-tree-data-structure-what-are-the-applications-for-binary-search-trees)  
+3.3. [What are tree traversals?](#33-what-are-tree-traversals)  
+3.4. [What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?](#34-what-is-an-avl-tree-data-structure-its-operations-and-its-rotations-what-are-the-applications-for-avl-trees)  
 
-8. **Abstraction and Encapsulation**
-   - 8.1 [How is data abstraction accomplished?](#how-is-data-abstraction-accomplished)
-   - 8.2 [What is meant by Inheritance?](#what-is-meant-by-inheritance)
-   - 8.3 [What is encapsulation?](#what-is-encapsulation)
-   - 8.4 [What is Abstraction?](#what-is-abstraction)
+#### Hash Maps
+3.5. [What is hashmap in data structure?](#35-what-is-hashmap-in-data-structure)  
+3.6. [What is the requirement for an object to be used as key or value in HashMap?](#36-what-is-the-requirement-for-an-object-to-be-used-as-key-or-value-in-hashmap)  
+3.7. [How does HashMap handle collisions in Java?](#37-how-does-hashmap-handle-collisions-in-java)  
+3.8. [What is the time complexity of basic operations get() and put() in HashMap class?](#38-what-is-the-time-complexity-of-basic-operations-get-and-put-in-hashmap-class)  
 
-9. **Exception Handling and Garbage Collection**
-   - 9.1 [What is an exception?](#what-is-an-exception)
-   - 9.2 [What is meant by exception handling?](#what-is-meant-by-exception-handling)
-   - 9.3 [What is meant by Garbage Collection in OOPs world?](#what-is-meant-by-garbage-collection-in-oops-world)
+#### Graphs
+3.9. [What is graph data structure and its representations? What are the applications for graphs?](#39-what-is-graph-data-structure-and-its-representations-what-are-the-applications-for-graphs)  
+3.10. [What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?](#310-what-is-the-difference-between-the-breadth-first-search-bfs-and-depth-first-search-dfs)  
 
-10. **Class and Object Concepts**
-    - 10.1 [What is a class?](#what-is-a-class)
-    - 10.2 [What is an object?](#what-is-an-object)
-    - 10.3 [How much memory does a class occupy?](#how-much-memory-does-a-class-occupy)
-    - 10.4 [Is it always necessary to create objects from class?](#is-it-always-necessary-to-create-objects-from-class)
+### 4. Implementation Questions
+#### Array Operations
+4.1. [Write a program to remove duplicates from a sorted array in place?](#41-write-a-program-to-remove-duplicates-from-a-sorted-array-in-place)  
 
-11. **Constructors and Destructors**
-    - 11.1 [What is a constructor?](#what-is-a-constructor)
-    - 11.2 [What are the various types of constructors in C++?](#what-are-the-various-types-of-constructors-in-c)
-    - 11.3 [What is a copy constructor?](#what-is-a-copy-constructor)
-    - 11.4 [What is a destructor?](#what-is-a-destructor)
-
-12. **C++ Specific Concepts**
-    - 12.1 [How does C++ support Polymorphism?](#how-does-c-support-polymorphism)
-    - 12.2 [Are class and structure the same? If not, what's the difference between a class and a structure?](#are-class-and-structure-the-same-if-not-whats-the-difference-between-a-class-and-a-structure)
-
-13. **Miscellaneous OOPs Questions**
-    - 13.1 [Can we run a Java application without implementing the OOPs concept?](#can-we-run-a-java-application-without-implementing-the-oops-concept)
-    - 13.2 [Explain Inheritance with an example?](#explain-inheritance-with-an-example)
+#### Binary Tree Operations
+4.2. [Write a function for zigzag traversal in a binary tree.](#42-write-a-function-for-zigzag-traversal-in-a-binary-tree)  
+4.3. [Write Java code to count the number of nodes in a binary tree.](#43-write-java-code-to-count-the-number-of-nodes-in-a-binary-tree)  
+4.4. [Write a function to sort a linked list of 0s, 1s and 2s.](#44-write-a-function-to-sort-a-linked-list-of-0s-1s-and-2s)  
+4.5. [Write a function to detect cycle in an undirected graph.](#45-write-a-function-to-detect-cycle-in-an-undirected-graph)  
+4.6. [Write a function to convert an infix expression to postfix expression.](#46-write-a-function-to-convert-an-infix-expression-to-postfix-expression)  
+4.7. [Write a function to find the maximum for each and every contiguous subarray of size k.](#47-write-a-function-to-find-the-maximum-for-each-and-every-contiguous-subarray-of-size-k)  
+4.8. [Write a function to merge two sorted binary search trees.](#48-write-a-function-to-merge-two-sorted-binary-search-trees)  
+4.9. [Write a function to print all unique rows of the given matrix.](#49-write-a-function-to-print-all-unique-rows-of-the-given-matrix)  
+4.10. [Write a function to find the number of subarrays with product less than K.](#410-write-a-function-to-find-the-number-of-subarrays-with-product-less-than-k)  
+4.11. [Find the subsequence of length 3 with the highest product from a sequence of non-negative integers, with the elements in increasing order.](#411-find-the-subsequence-of-length-3-with-the-highest-product-from-a-sequence-of-non-negative-integers-with-the-elements-in-increasing-order)  
+4.12. [Write a function to implement Quicksort on Doubly Linked List.](#412-write-a-function-to-implement-quicksort-on-doubly-linked-list)  
+4.13. [Write a function to connect nodes at the same level of a binary tree.](#413-write-a-function-to-connect-nodes-at-the-same-level-of-a-binary-tree)  
+4.14. [Write a function to find the number of structurally unique binary trees that are possible.](#414-write-a-function-to-find-the-number-of-structurally-unique-binary-trees-that-are-possible)  
+4.15. [Implement LRU (Least Recently Used) Cache.](#415-implement-lru-least-recently-used-cache)  
+4.16. [Write a function to determine whether duplicate elements in a given array are within a given distance of each other.](#416-write-a-function-to-determine-whether-duplicate-elements-in-a-given-array-are-within-a-given-distance-of-each-other)  
+4.17. [Write a recursive function to calculate the height of a binary tree in Java.](#417-write-a-recursive-function-to-calculate-the-height-of-a-binary-tree-in-java)  
+4.18. [Print Left view of any binary tree.](#418-print-left-view-of-any-binary-tree)  
+4.19. [Given an m x n 2D grid map of '1’s which represents land and '0’s that represents water, return the number of islands (surrounded by water and formed by connecting adjacent lands in 2 directions - vertically or horizontally).](#419-given-an-m-x-n-2d-grid-map-of-1s-which-represents-land-and-0s-that-represents-water-return-the-number-of-islands-surrounded-by-water-and-formed-by-connecting-adjacent-lands-in-2-directions-vertically-or-horizontally)  
+4.20. [What is topological sorting in a graph?](#420-what-is-topological-sorting-in-a-graph)
 
 ---
-## 1.1 What is the need for OOPs?
 
-There are many reasons why OOPs is mostly preferred, but the most important among them are: 
+## 1. Introduction
 
-- OOPs helps users to understand the software easily, although they don’t know the actual implementation.
-- With OOPs, the readability, understandability, and maintainability of the code increase multifold.
-- Even very big software can be easily written and managed easily using OOPs.
+### 1.1 What are Data Structures?
+A data structure is a mechanical or logical way that data is organized within a program. The organization of data is what determines how a program performs. There are many types of data structures, each with its own uses. When designing code, we need to pay particular attention to the way data is structured. If data isn't stored efficiently or correctly structured, then the overall performance of the code will be reduced.
+
+### 1.2 Why create Data Structures?
+Creating data structures allows developers to optimize the performance of algorithms by organizing data in a way that facilitates efficient access and manipulation.
+
+### 1.3 What are some applications of Data Structures?
+Data structures are used in a wide range of applications, from simple data management tasks to complex algorithms in computer graphics, networking, and artificial intelligence.
+
+### 1.4 Explain the process behind storing a variable in memory.
+When a variable is declared, the compiler allocates a specific amount of memory for it, and the variable's value is stored in that allocated memory location. The memory address of the variable is used to access its value during program execution.
+
+### 1.5 Can you explain the difference between file structure and storage structure?
+File structure refers to how data is organized in files on a storage medium, while storage structure refers to how data is stored in memory during program execution. File structures can include formats like text files, binary files, etc., whereas storage structures include data types like arrays, linked lists, etc.
+
+### 1.6 Describe the types of Data Structures.
+Data structures can be classified into two main categories:
+- **Primitive Data Structures:** These are basic data types like integers, floats, characters, and booleans.
+- **Non-Primitive Data Structures:** These include more complex types like arrays, linked lists, stacks, queues, trees, and graphs.
+
+---
+
+## 2. Basic Data Structures
+
+### Arrays
+
+#### 2.1 What is an array data structure? What are the applications of arrays?
+An array is a collection of elements identified by index or key. Applications of arrays include storing a collection of data, implementing other data structures (like stacks and queues), and performing mathematical operations on datasets.
+
+#### 2.2 Elaborate on different types of array data structure.
+Different types of arrays include:
+- **Single-dimensional arrays:** A linear list of elements.
+- **Multi-dimensional arrays:** Arrays that contain other arrays, such as matrices (2D arrays) or tensors (nD arrays).
+- **Dynamic arrays:** Arrays that can grow or shrink in size during runtime, such as ArrayLists in Java.
+
+### Linked Lists
+
+#### 2.3 What is a linked list data structure? What are the applications for the linked list?
+A linked list is a linear data structure where elements (nodes) are connected using pointers. Applications include dynamic memory allocation, implementing stacks and queues, and maintaining a list of items that can grow or shrink in size.
+
+#### 2.4 Elaborate on different types of Linked List data structures.
+Types of linked lists include:
+- **Singly linked lists:** Each node points to the next node.
+- **Doubly linked lists:** Each node points to both the next and the previous node.
+- **Circular linked lists:** The last node points back to the first node, forming a circle.
+
+#### 2.5 Difference between Array and Linked List.
+- **Memory allocation:** Arrays use contiguous memory locations, while linked lists use scattered memory locations.
+- **Size:** Arrays have a fixed size, while linked lists can dynamically grow and shrink.
+- **Access time:** Arrays allow O(1) access time, whereas linked lists require O(n) time to access elements.
+
+### Stacks
+
+#### 2.6 What is a stack data structure? What are the applications of stack?
+A stack is a linear data structure that follows the Last In First Out (LIFO) principle. Applications include function call management, undo mechanisms in applications, and syntax parsing.
+
+#### 2.7 What are different operations available in stack data structure?
+Operations on stacks include:
+- **Push:** Add an item to the top of the stack.
+- **Pop:** Remove the item from the top of the stack.
+- **Peek:** View the item at the top of the stack without removing it.
+- **isEmpty:** Check if the stack is empty.
+
+#### 2.8 How to implement a queue using stack?
+A queue can be implemented using two stacks. Elements can be enqueued to one stack and dequeued by popping all elements from the first stack to the second stack.
+
+#### 2.9 How do you implement stack using queues?
+A stack can be implemented using two queues. Elements are enqueued in one queue and when popping, all elements are dequeued to the other queue except the last element.
+
+### Queues
+
+#### 2.10 What is a queue data structure? What are the applications of queue?
+A queue is a linear data structure that follows the First In First Out (FIFO) principle. Applications include scheduling processes in operating systems, managing requests in servers, and breadth-first search algorithms.
+
+#### 2.11 What are different operations available in queue data structure?
+Operations on queues include:
+- **Enqueue:** Add an item to the back of the queue.
+- **Dequeue:** Remove the item from the front of the queue.
+- **Front:** View the item at the front of the queue without removing it.
+- **isEmpty:** Check if the queue is empty.
+
+---
+
+## 3. Advanced Data Structures
+
+### Trees
+
+#### 3.1 What is a binary tree data structure? What are the applications for binary trees?
+A binary tree is a tree data structure where each node has at most two children. Applications include expression parsing, binary search trees, and hierarchical data representation.
+
+#### 3.2 What is binary search tree data structure? What are the applications for binary search trees?
+A binary search tree (BST) is a binary tree where the left child contains nodes with values less than the parent node, and the right child contains nodes with values greater than the parent node. Applications include efficient searching, insertion, and deletion operations.
+
+#### 3.3 What are tree traversals?
+Tree traversals are methods for visiting all nodes in a tree. Common types include:
+- **Inorder:** Left subtree, root, right subtree.
+- **Preorder:** Root, left subtree, right subtree.
+- **Postorder:** Left subtree, right subtree, root.
+
+#### 3.4 What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?
+An AVL tree is a self-balancing binary search tree where the difference in heights between left and right subtrees is at most one. Operations include insertion, deletion, and rotations (single and double) to maintain balance. Applications include databases and memory management.
+
+### Hash Maps
+
+#### 3.5 What is hashmap in data structure?
+A hashmap is a data structure that stores key-value pairs, allowing for efficient data retrieval based on the key. It uses a hash function to compute the index for each key.
+
+#### 3.6 What is the requirement for an object to be used as key or value in HashMap?
+Keys in a HashMap must be unique and immutable (e.g., strings, numbers). Values can be mutable or immutable and can be of any data type.
+
+#### 3.7 How does HashMap handle collisions in Java?
+HashMap handles collisions using two methods:
+- **Chaining:** Each index points to a linked list of entries that hash to the same index.
+- **Open addressing:** It finds the next available index using probing techniques.
+
+#### 3.8 What is the time complexity of basic operations get() and put() in HashMap class?
+The average time complexity for `get()` and `put()` operations in a HashMap is O(1), but in the worst case (when many collisions occur), it can degrade to O(n).
+
+### Graphs
+
+#### 3.9 What is graph data structure and its representations? What are the applications for graphs?
+A graph is a collection of nodes (vertices) connected by edges. It can be represented using adjacency matrices or adjacency lists. Applications include social networks, transportation networks, and network routing.
+
+#### 3.10 What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?
+- **BFS:** Explores nodes layer by layer, uses a queue, and finds the shortest path in unweighted graphs.
+- **DFS:** Explores as far as possible along a branch before backtracking, uses a stack or recursion, and can find a path but does not guarantee the shortest.
+
+---
+
+## 4. Implementation Questions
+
+### Array Operations
+
+#### 4.1 Write a program to remove duplicates from a sorted array in place.
+```java
+public static int removeDuplicates(int[] nums) {
+    if (nums.length == 0) return 0;
+    int j = 0;
+    for (int i = 1; i < nums.length; i++) {
+        if (nums[i] != nums[j]) {
+            j++;
+            nums[j] = nums[i];
+        }
+    }
+    return j + 1;
+}
