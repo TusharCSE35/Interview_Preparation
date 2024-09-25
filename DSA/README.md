@@ -591,7 +591,14 @@ Following are some applications of queue data structure:
     <img src="dsa_image/stack_and_queue_data_structure.png" alt="Types of Data Structures" width="600" height="270"/>
 </p><br>
 
-
+| **Stack**                                                         | **Queue**                                                          |
+|--------------------------------------------------------------------|---------------------------------------------------------------------|
+| Stack is a linear data structure where data is added and removed from the top. | Queue is a linear data structure where data is ended at the rear end and removed from the front. |
+| Stack is based on LIFO (Last In First Out) principle.              | Queue is based on FIFO (First In First Out) principle.               |
+| Insertion operation in Stack is known as push.                     | Insertion operation in Queue is known as enqueue.                    |
+| Delete operation in Stack is known as pop.                         | Delete operation in Queue is known as dequeue.                       |
+| Only one pointer is available for both addition and deletion: `top()` | Two pointers are available for addition and deletion: `front()` and `rear()` |
+| Used in solving recursion problems.                                | Used in solving sequential processing problems.                      |
 
 ---
 
