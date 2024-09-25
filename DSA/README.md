@@ -342,27 +342,215 @@ Space Complexity:
 - O(n) - Each node requires space for one pointer (to the next node) along with the space for the data itself.
 
 ### 2.5 Difference between Array and Linked List.
-- **Memory allocation:** Arrays use contiguous memory locations, while linked lists use scattered memory locations.
-- **Size:** Arrays have a fixed size, while linked lists can dynamically grow and shrink.
-- **Access time:** Arrays allow O(1) access time, whereas linked lists require O(n) time to access elements.
+<p align="center">
+    <img src="dsa_image/Array_and_Linked_List.png" alt="Types of Data Structures" width="600" height="250"/>
+</p><br>
+
+### Arrays vs Linked Lists:
+
+| **Arrays** | **Linked Lists** |
+|------------|------------------|
+| An array is a collection of data elements of the same type. | A linked list is a collection of entities known as nodes. The node is divided into two sections: data and address. |
+| It keeps the data elements in a single memory block. | It stores elements at random, or anywhere in memory. |
+| The memory size of an array is fixed and cannot be changed during runtime. | The memory size of a linked list is allocated during runtime. |
+| An array's elements are not dependent on one another. | Linked List elements are dependent on one another. |
+| It is easier and faster to access an element in an array. | In a linked list, it takes time to access an element. |
+| Memory utilization is inefficient in the case of an array. | Memory utilization is more efficient in the case of linked lists. |
+| Operations like insertion and deletion take longer in an array. | Operations like insertion and deletion are faster in a linked list. |
+
 
 ### Stacks
 
 ### 2.6 What is a stack data structure? What are the applications of stack?
-A stack is a linear data structure that follows the Last In First Out (LIFO) principle. Applications include function call management, undo mechanisms in applications, and syntax parsing.
+A stack is a data structure that is used to represent the state of an application at a particular point in time. The stack consists of a series of items that are added to the top of the stack and then removed from the top. It is a linear data structure that follows a particular order in which operations are performed. LIFO (Last In First Out) or FILO (First In Last Out) are two possible orders. A stack consists of a sequence of items. The element that's added last will come out first, a real-life example might be a stack of clothes on top of each other. When we remove the cloth that was previously on top, we can say that the cloth that was added last comes out first.
+
+<p align="center">
+    <img src="dsa_image/stack_data_structure.png" alt="Types of Data Structures" width="600" height="250"/>
+</p><br>
+
+Following are some applications for stack data structure:
+
+- It acts as temporary storage during recursive operations
+- Redo and Undo operations in doc editors
+- Reversing a string
+- Parenthesis matching
+- Postfix to Infix Expressions
+- Function calls order
 
 ### 2.7 What are different operations available in stack data structure?
-Operations on stacks include:
-- **Push:** Add an item to the top of the stack.
-- **Pop:** Remove the item from the top of the stack.
-- **Peek:** View the item at the top of the stack without removing it.
-- **isEmpty:** Check if the stack is empty.
+Some of the main operations provided in the stack data structure are: 
+
+- **push:** This adds an item to the top of the stack. The overflow condition occurs if the stack is full.
+- **pop:** This removes the top item of the stack. Underflow condition occurs if the stack is empty.
+- **top:** This returns the top item from the stack.
+- **isEmpty:** This returns true if the stack is empty else false.
+- **size:**  This returns the size of the stack.
 
 ### 2.8 How to implement a queue using stack?
-A queue can be implemented using two stacks. Elements can be enqueued to one stack and dequeued by popping all elements from the first stack to the second stack.
+To implement a queue using two stacks, follow this approach:
+
+1. **Enqueue Operation**: Simply push elements into the first stack.
+2. **Dequeue Operation**: If the second stack is empty, pop all elements from the first stack and push them into the second stack, then pop the top of the second stack. If the second stack is not empty, just pop the top of the second stack.
+
+#### C++ Implementation:
+
+```cpp
+#include <iostream>
+#include <stack>
+using namespace std;
+
+class QueueUsingStacks {
+private:
+    stack<int> s1, s2;
+
+public:
+    // Enqueue operation
+    void enqueue(int x) {
+        s1.push(x);
+    }
+
+    // Dequeue operation
+    int dequeue() {
+        if (s2.empty()) {
+            if (s1.empty()) {
+                cout << "Queue is empty!" << endl;
+                return -1;
+            }
+            while (!s1.empty()) {
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+        int topVal = s2.top();
+        s2.pop();
+        return topVal;
+    }
+
+    // Function to display the front element
+    int front() {
+        if (s2.empty()) {
+            if (s1.empty()) {
+                cout << "Queue is empty!" << endl;
+                return -1;
+            }
+            while (!s1.empty()) {
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+        return s2.top();
+    }
+};
+
+int main() {
+    QueueUsingStacks q;
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    
+    cout << "Front element: " << q.front() << endl; // Output: 1
+    cout << "Dequeue: " << q.dequeue() << endl;     // Output: 1
+    cout << "Dequeue: " << q.dequeue() << endl;     // Output: 2
+    
+    q.enqueue(4);
+    
+    cout << "Dequeue: " << q.dequeue() << endl;     // Output: 3
+    cout << "Front element: " << q.front() << endl; // Output: 4
+    
+    return 0;
+}
+```
+**Explanation:**
+- Enqueue: All elements are pushed onto the first stack s1.
+- Dequeue: If s2 is empty, elements from s1 are popped and pushed into s2. Then, the top of s2 is popped to simulate the queue's dequeue operation.
 
 ### 2.9 How do you implement stack using queues?
-A stack can be implemented using two queues. Elements are enqueued in one queue and when popping, all elements are dequeued to the other queue except the last element.
+
+To implement a stack using two queues, you can follow these steps:
+
+1. **Push Operation**: Push the element into the first queue.
+2. **Pop Operation**: Transfer all elements except the last one from the first queue to the second queue. Then, pop the last element from the first queue. Swap the names of the two queues so that the first queue always contains the most recent elements.
+
+#### C++ Code:
+
+```cpp
+#include <iostream>
+#include <queue>
+using namespace std;
+
+class StackUsingQueues {
+private:
+    queue<int> q1, q2;
+
+public:
+    // Push operation
+    void push(int x) {
+        q1.push(x);
+    }
+
+    // Pop operation
+    void pop() {
+        if (q1.empty()) {
+            cout << "Stack is empty!" << endl;
+            return;
+        }
+
+        // Move all elements except the last one from q1 to q2
+        while (q1.size() > 1) {
+            q2.push(q1.front());
+            q1.pop();
+        }
+
+        // Pop the last element
+        q1.pop();
+
+        // Swap q1 and q2
+        swap(q1, q2);
+    }
+
+    // Top operation
+    int top() {
+        if (q1.empty()) {
+            cout << "Stack is empty!" << endl;
+            return -1;
+        }
+
+        // Move all elements except the last one from q1 to q2
+        while (q1.size() > 1) {
+            q2.push(q1.front());
+            q1.pop();
+        }
+
+        // Get the last element
+        int topElement = q1.front();
+        q2.push(topElement);  // Also push it to q2
+        q1.pop();
+
+        // Swap q1 and q2
+        swap(q1, q2);
+
+        return topElement;
+    }
+
+    // Check if the stack is empty
+    bool empty() {
+        return q1.empty();
+    }
+};
+
+int main() {
+    StackUsingQueues s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+
+    cout << "Top element: " << s.top() << endl; // Output: 3
+    s.pop();
+    cout << "Top element after pop: " << s.top() << endl; // Output: 2
+
+    return 0;
+}
+```
 
 ### Queues
 
