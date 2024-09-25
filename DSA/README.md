@@ -172,7 +172,7 @@ Following are some applications of linked list data structure:
 - Forward and backward operation in the browser.
 
 ### 2.4 Elaborate on different types of Linked List data structures.
-### Singly Linked Lis:
+### 1. Singly Linked Lis:
 
 A singly linked list is a data structure used to store multiple items. Each item is linked together using a key, which typically serves as a unique identifier. In a singly linked list, items are stored in separate nodes, where each node can hold a single item or a collection of items.
 
@@ -184,6 +184,108 @@ A singly linked list is a data structure used to store multiple items. Each item
 </p><br>
 
 The key for a singly linked list can be any data type, such as an integer or a string. Singly linked lists are useful for storing various types of data, including grocery lists, patient records, and time-sensitive data like stock prices or flight schedules.
+
+#### C++ Implementation of Singly Linked List
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Node structure
+struct Node {
+    int data;
+    Node* next;
+
+    Node(int value) {
+        data = value;
+        next = nullptr;
+    }
+};
+
+// Singly Linked List class
+class SinglyLinkedList {
+private:
+    Node* head;
+
+public:
+    SinglyLinkedList() {
+        head = nullptr;
+    }
+
+    // Function to insert a new node at the end
+    void insert(int value) {
+        Node* newNode = new Node(value);
+        if (!head) {
+            head = newNode;
+        } else {
+            Node* temp = head;
+            while (temp->next) {
+                temp = temp->next;
+            }
+            temp->next = newNode;
+        }
+    }
+
+    // Function to display the list
+    void display() {
+        Node* temp = head;
+        while (temp) {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        }
+        cout << "nullptr" << endl;
+    }
+
+    // Function to delete a node by value
+    void deleteNode(int value) {
+        if (!head) return;
+
+        if (head->data == value) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+
+        Node* current = head;
+        while (current->next && current->next->data != value) {
+            current = current->next;
+        }
+
+        if (current->next) {
+            Node* temp = current->next;
+            current->next = current->next->next;
+            delete temp;
+        }
+    }
+
+    // Destructor to free memory
+    ~SinglyLinkedList() {
+        Node* current = head;
+        while (current) {
+            Node* temp = current;
+            current = current->next;
+            delete temp;
+        }
+    }
+};
+
+// Example usage
+int main() {
+    SinglyLinkedList list;
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    
+    cout << "Singly Linked List: ";
+    list.display();
+    
+    list.deleteNode(2);
+    cout << "After deleting 2: ";
+    list.display();
+    
+    return 0;
+}
 
 #### Singly Linked List Complexity
 Time Complexity:
@@ -201,11 +303,11 @@ Time Complexity:
 
 Space Complexity: O(n)
 
-### Doubly Linked List:
+### 2. Doubly Linked List:
 A doubly linked list is a data structure that allows you to access data in both directions. Each node in the list points to the next node and also back to the previous one. This means you can easily move forward or backward through the list.
 
 <p align="center">
-    <img src="dsa_image/Doubly_Linked_List.png" alt="Types of Data Structures" width="400" height="180"/>
+    <img src="dsa_image/Doubly_Linked_List.png" alt="Types of Data Structures" width="600" height="200"/>
 </p><br>
 
 You can access each node by its address and its contents by its index. Doubly linked lists are great for applications that require quick access to large amounts of data. However, they can be harder to manage than singly linked lists, making it more challenging to add or remove nodes.
@@ -219,6 +321,25 @@ Time Complexity:
 
 Space Complexity:
 - O(n) - Each node requires extra space for two pointers (one for the next node and one for the previous node), in addition to the space for the data itself.
+
+### 3. Circular Linked List: 
+A circular linked list is a unidirectional linked list where each node points to its next node and the last node points back to the first node, which makes it circular.
+
+<p align="center">
+    <img src="dsa_image/Circular_Linked_List.png" alt="Types of Data Structures" width="600" height="200"/>
+</p><br>
+
+#### Doubly Linked List Complexity
+Time Complexity:
+
+- Access: O(n) - You may need to traverse the list to find a specific node.
+- Search: O(n) - Finding a value requires checking each node in the list.
+- Insertion: O(1) - Inserting a new node can be done in constant time if you have a reference to a node.
+- Deletion: O(1) - Deleting a node is also done in constant time if you have a reference to the node to be deleted.
+
+Space Complexity:
+
+- O(n) - Each node requires space for one pointer (to the next node) along with the space for the data itself.
 
 ### 2.5 Difference between Array and Linked List.
 - **Memory allocation:** Arrays use contiguous memory locations, while linked lists use scattered memory locations.
