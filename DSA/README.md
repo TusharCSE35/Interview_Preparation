@@ -121,7 +121,12 @@ The main difference is that the storage structure has data stored in the memory 
 
 ### Arrays
 
-#### 2.1 What is an array data structure? What are the applications of arrays?
+### 2.1 What is an array data structure? What are the applications of arrays?
+
+<p align="center">
+    <img src="dsa_image/array.png" alt="Types of Data Structures" width="550" height="270"/>
+</p><br>
+
 An array data structure is a data structure that is used to store data in a way that is efficient and easy to access. It is similar to a list in that it stores data in a sequence. However, an array data structure differs from a list in that it can hold much more data than a list can. An array data structure is created by combining several arrays together. Each array is then given a unique identifier, and each array’s data is stored in the order in which they are created.
 
 <p align="center">
@@ -129,7 +134,7 @@ An array data structure is a data structure that is used to store data in a way 
 </p><br>
 
 Array data structures are commonly used in databases and other computer systems to store large amounts of data efficiently. They are also useful for storing information that is frequently accessed, such as large amounts of text or images.
-#### 2.2 Elaborate on different types of array data structure.
+### 2.2 Elaborate on different types of array data structure.
 There are several different types of arrays:
 
 - **One-dimensional array:** A one-dimensional array stores its elements in contiguous memory locations, accessing them using a single index value. It is a linear data structure holding all the elements in a sequence.
@@ -153,7 +158,7 @@ There are several different types of arrays:
 
 ### Linked Lists
 
-#### 2.3 What is a linked list data structure? What are the applications for the linked list?
+### 2.3 What is a linked list data structure? What are the applications for the linked list?
 A linked list can be thought of as a series of linked nodes (or items) that are connected by links (or paths). Each link represents an entry into the linked list, and each entry points to the next node in the sequence. The order in which nodes are added to the list is determined by the order in which they are created.
 <p align="center">
     <img src="dsa_image/linked_list.png" alt="Types of Data Structures" width="380" height="180"/>
@@ -166,41 +171,84 @@ Following are some applications of linked list data structure:
 - Round robin scheduling for operating system tasks.
 - Forward and backward operation in the browser.
 
-#### 2.4 Elaborate on different types of Linked List data structures.
-Types of linked lists include:
-- **Singly linked lists:** Each node points to the next node.
-- **Doubly linked lists:** Each node points to both the next and the previous node.
-- **Circular linked lists:** The last node points back to the first node, forming a circle.
+### 2.4 Elaborate on different types of Linked List data structures.
+### Singly Linked Lis:
 
-#### 2.5 Difference between Array and Linked List.
+A singly linked list is a data structure used to store multiple items. Each item is linked together using a key, which typically serves as a unique identifier. In a singly linked list, items are stored in separate nodes, where each node can hold a single item or a collection of items.
+
+- **Adding Items:** When you add an item, a new node is created and added to the end of the list.
+- **Removing Items:** When you remove an item, the node containing that item is deleted, and the list is updated accordingly.
+
+<p align="center">
+    <img src="dsa_image/Singly_Linked_List.png" alt="Types of Data Structures" width="400" height="180"/>
+</p><br>
+
+The key for a singly linked list can be any data type, such as an integer or a string. Singly linked lists are useful for storing various types of data, including grocery lists, patient records, and time-sensitive data like stock prices or flight schedules.
+
+#### Singly Linked List Complexity
+Time Complexity:
+
+- Access: O(n)
+- Search: O(n)
+- Insertion:
+  - At beginning: O(1)
+  - At end: O(n)
+  - In middle: O(n)
+- Deletion:
+  - At beginning: O(1)
+  - At end: O(n)
+  - In middle: O(n)
+
+Space Complexity: O(n)
+
+### Doubly Linked List:
+A doubly linked list is a data structure that allows you to access data in both directions. Each node in the list points to the next node and also back to the previous one. This means you can easily move forward or backward through the list.
+
+<p align="center">
+    <img src="dsa_image/Doubly_Linked_List.png" alt="Types of Data Structures" width="400" height="180"/>
+</p><br>
+
+You can access each node by its address and its contents by its index. Doubly linked lists are great for applications that require quick access to large amounts of data. However, they can be harder to manage than singly linked lists, making it more challenging to add or remove nodes.
+
+#### Doubly Linked List Complexity
+Time Complexity:
+- Access: O(n) - You may need to traverse the list to find a specific node.
+- Search: O(n) - You need to go through the nodes to find a value.
+- Insertion: O(1) - Inserting a node can be done in constant time if you have a reference to the node where you want to insert.
+- Deletion: O(1) - Deleting a node is also done in constant time if you have a reference to the node to be deleted.
+
+Space Complexity:
+- O(n) - Each node requires extra space for two pointers (one for the next node and one for the previous node), in addition to the space for the data itself.
+
+### 2.5 Difference between Array and Linked List.
 - **Memory allocation:** Arrays use contiguous memory locations, while linked lists use scattered memory locations.
 - **Size:** Arrays have a fixed size, while linked lists can dynamically grow and shrink.
 - **Access time:** Arrays allow O(1) access time, whereas linked lists require O(n) time to access elements.
 
 ### Stacks
 
-#### 2.6 What is a stack data structure? What are the applications of stack?
+### 2.6 What is a stack data structure? What are the applications of stack?
 A stack is a linear data structure that follows the Last In First Out (LIFO) principle. Applications include function call management, undo mechanisms in applications, and syntax parsing.
 
-#### 2.7 What are different operations available in stack data structure?
+### 2.7 What are different operations available in stack data structure?
 Operations on stacks include:
 - **Push:** Add an item to the top of the stack.
 - **Pop:** Remove the item from the top of the stack.
 - **Peek:** View the item at the top of the stack without removing it.
 - **isEmpty:** Check if the stack is empty.
 
-#### 2.8 How to implement a queue using stack?
+### 2.8 How to implement a queue using stack?
 A queue can be implemented using two stacks. Elements can be enqueued to one stack and dequeued by popping all elements from the first stack to the second stack.
 
-#### 2.9 How do you implement stack using queues?
+### 2.9 How do you implement stack using queues?
 A stack can be implemented using two queues. Elements are enqueued in one queue and when popping, all elements are dequeued to the other queue except the last element.
 
 ### Queues
 
-#### 2.10 What is a queue data structure? What are the applications of queue?
+### 2.10 What is a queue data structure? What are the applications of queue?
 A queue is a linear data structure that follows the First In First Out (FIFO) principle. Applications include scheduling processes in operating systems, managing requests in servers, and breadth-first search algorithms.
 
-#### 2.11 What are different operations available in queue data structure?
+### 2.11 What are different operations available in queue data structure?
 Operations on queues include:
 - **Enqueue:** Add an item to the back of the queue.
 - **Dequeue:** Remove the item from the front of the queue.
@@ -213,43 +261,43 @@ Operations on queues include:
 
 ### Trees
 
-#### 3.1 What is a binary tree data structure? What are the applications for binary trees?
+### 3.1 What is a binary tree data structure? What are the applications for binary trees?
 A binary tree is a tree data structure where each node has at most two children. Applications include expression parsing, binary search trees, and hierarchical data representation.
 
-#### 3.2 What is binary search tree data structure? What are the applications for binary search trees?
+### 3.2 What is binary search tree data structure? What are the applications for binary search trees?
 A binary search tree (BST) is a binary tree where the left child contains nodes with values less than the parent node, and the right child contains nodes with values greater than the parent node. Applications include efficient searching, insertion, and deletion operations.
 
-#### 3.3 What are tree traversals?
+### 3.3 What are tree traversals?
 Tree traversals are methods for visiting all nodes in a tree. Common types include:
 - **Inorder:** Left subtree, root, right subtree.
 - **Preorder:** Root, left subtree, right subtree.
 - **Postorder:** Left subtree, right subtree, root.
 
-#### 3.4 What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?
+### 3.4 What is an AVL tree data structure, its operations, and its rotations? What are the applications for AVL trees?
 An AVL tree is a self-balancing binary search tree where the difference in heights between left and right subtrees is at most one. Operations include insertion, deletion, and rotations (single and double) to maintain balance. Applications include databases and memory management.
 
 ### Hash Maps
 
-#### 3.5 What is hashmap in data structure?
+### 3.5 What is hashmap in data structure?
 A hashmap is a data structure that stores key-value pairs, allowing for efficient data retrieval based on the key. It uses a hash function to compute the index for each key.
 
-#### 3.6 What is the requirement for an object to be used as key or value in HashMap?
+### 3.6 What is the requirement for an object to be used as key or value in HashMap?
 Keys in a HashMap must be unique and immutable (e.g., strings, numbers). Values can be mutable or immutable and can be of any data type.
 
-#### 3.7 How does HashMap handle collisions in Java?
+### 3.7 How does HashMap handle collisions in Java?
 HashMap handles collisions using two methods:
 - **Chaining:** Each index points to a linked list of entries that hash to the same index.
 - **Open addressing:** It finds the next available index using probing techniques.
 
-#### 3.8 What is the time complexity of basic operations get() and put() in HashMap class?
+### 3.8 What is the time complexity of basic operations get() and put() in HashMap class?
 The average time complexity for `get()` and `put()` operations in a HashMap is O(1), but in the worst case (when many collisions occur), it can degrade to O(n).
 
 ### Graphs
 
-#### 3.9 What is graph data structure and its representations? What are the applications for graphs?
+### 3.9 What is graph data structure and its representations? What are the applications for graphs?
 A graph is a collection of nodes (vertices) connected by edges. It can be represented using adjacency matrices or adjacency lists. Applications include social networks, transportation networks, and network routing.
 
-#### 3.10 What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?
+### 3.10 What is the difference between the Breadth First Search (BFS) and Depth First Search (DFS)?
 - **BFS:** Explores nodes layer by layer, uses a queue, and finds the shortest path in unweighted graphs.
 - **DFS:** Explores as far as possible along a branch before backtracking, uses a stack or recursion, and can find a path but does not guarantee the shortest.
 
@@ -259,7 +307,7 @@ A graph is a collection of nodes (vertices) connected by edges. It can be repres
 
 ### Array Operations
 
-#### 4.1 Write a program to remove duplicates from a sorted array in place.
+### 4.1 Write a program to remove duplicates from a sorted array in place.
 ```java
 public static int removeDuplicates(int[] nums) {
     if (nums.length == 0) return 0;
