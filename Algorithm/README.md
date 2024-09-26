@@ -774,12 +774,12 @@ function kadane(A):
 ```    
 **For Example:** A = `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`
 
-#### 1.Initialization:
+#### 1. Initialization:
 
 - bestSum = INT_MIN
 - currentSum = 0
 
-#### 2.Iteration:
+#### 2. Iteration:
 - i = 0: currentSum = -2, bestSum = max(INT_MIN, -2) = -2
 - i = 1: currentSum = -1, bestSum = max(-2, -1) = -1
 - i = 2: currentSum = -4, bestSum = -1 (reset currentSum to 0)
@@ -790,7 +790,7 @@ function kadane(A):
 - i = 7: currentSum = 1, bestSum = 6
 - i = 8: currentSum = 5, bestSum = 6
 
-#### 3.Final Result:
+#### 3. Final Result:
 - After iterating through the array, the maximum subarray sum is bestSum = `6`.
 
 
