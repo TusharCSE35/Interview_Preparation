@@ -634,7 +634,7 @@ Dijkstra's algorithm is a method for finding the shortest paths between nodes in
     <img src="a_image/Dijkstra's_Algorithm.png" alt="Types of Data Structures" width="600" height="200"/>
 </p><br>
 
-## Example Graph
+### Example Graph
 
 <div style="text-align: center;">
 <pre>
@@ -648,7 +648,7 @@ Dijkstra's algorithm is a method for finding the shortest paths between nodes in
 
 - **Edges**: A to B (1), A to C (4), B to C (2)
 
-## Steps of the Algorithm
+### Steps of the Algorithm
 
 1. **Initialization**:
    - Start at node `A`, set its distance to `0`.
