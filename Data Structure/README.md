@@ -75,12 +75,9 @@
 4.12. [Write a function to implement Quicksort on Doubly Linked List.](#412-write-a-function-to-implement-quicksort-on-doubly-linked-list)  
 4.13. [Write a function to connect nodes at the same level of a binary tree.](#413-write-a-function-to-connect-nodes-at-the-same-level-of-a-binary-tree)  
 4.14. [Write a function to find the number of structurally unique binary trees that are possible.](#414-write-a-function-to-find-the-number-of-structurally-unique-binary-trees-that-are-possible)  
-4.15. [Implement LRU (Least Recently Used) Cache.](#415-implement-lru-least-recently-used-cache)  
-4.16. [Write a function to determine whether duplicate elements in a given array are within a given distance of each other.](#416-write-a-function-to-determine-whether-duplicate-elements-in-a-given-array-are-within-a-given-distance-of-each-other)  
-4.17. [Write a recursive function to calculate the height of a binary tree in Java.](#417-write-a-recursive-function-to-calculate-the-height-of-a-binary-tree-in-java)  
-4.18. [Print Left view of any binary tree.](#418-print-left-view-of-any-binary-tree)  
-4.19. [Given an m x n 2D grid map of '1’s which represents land and '0’s that represents water, return the number of islands (surrounded by water and formed by connecting adjacent lands in 2 directions - vertically or horizontally).](#419-given-an-m-x-n-2d-grid-map-of-1s-which-represents-land-and-0s-that-represents-water-return-the-number-of-islands-surrounded-by-water-and-formed-by-connecting-adjacent-lands-in-2-directions-vertically-or-horizontally)  
-4.20. [What is topological sorting in a graph?](#420-what-is-topological-sorting-in-a-graph)
+4.15. [Write a function to determine whether duplicate elements in a given array are within a given distance of each other.](#415-write-a-function-to-determine-whether-duplicate-elements-in-a-given-array-are-within-a-given-distance-of-each-other)    
+4.16. [Given an m x n 2D grid map of '1’s which represents land and '0’s that represents water, return the number of islands (surrounded by water and formed by connecting adjacent lands in 2 directions - vertically or horizontally).](#416-given-an-m-x-n-2d-grid-map-of-1s-which-represents-land-and-0s-that-represents-water-return-the-number-of-islands-surrounded-by-water-and-formed-by-connecting-adjacent-lands-in-2-directions-vertically-or-horizontally)  
+4.17. [What is topological sorting in a graph?](#417-what-is-topological-sorting-in-a-graph)
 
 ---
 
@@ -1086,17 +1083,228 @@ One of the cons of this representation is that queries such as "Is there an edge
 
 ### Array Operations
 
-### 4.1 Write a program to remove duplicates from a sorted array in place.
-```java
-public static int removeDuplicates(int[] nums) {
-    if (nums.length == 0) return 0;
-    int j = 0;
-    for (int i = 1; i < nums.length; i++) {
-        if (nums[i] != nums[j]) {
-            j++;
-            nums[j] = nums[i];
-        }
-    }
-    return j + 1;
-}
+### 4.1 Write a program to remove duplicates from a sorted array in place
+
+- Input: {1, 1, 1, 2, 3, 3, 6, 6, 7}
+- Output: {1, 2, 3, 6, 7}
+- Explanation: The given input has only 1,2,3,6, and 7 as unique elements, hence the output only lists them out.
+
+---
+
+### Binary Tree Operations
+
+### 4.2 Write a function for zigzag traversal in a binary tree
+
+- Input: 
+- Output: [1, 3, 2, 4, 5, 6, 8, 7]
+- Explanation: Zigzag Traversal first iterates the given level of the tree from left to right and then the next level as the right to the level.
+
+
+### 4.3 Write a function to sort a linked list of 0s, 1s and 2s
+
+- Input: 0->1->0->2->1->0->2->1
+- Output: 0->0->0->1->1->1->2->2
+- Explanation: All 0’s will come first then 1s and then 2s. This can be done in O(n) time by counting the occurrences of all three and rearranging them in the linked list.
+
+
+### 4.4 Write a function to detect a cycle in an undirected graph.
+
+#### Input:
+- `n`: Number of vertices in the graph.
+- `e`: Number of edges in the graph.
+- A list of `e` edges, where each edge is represented by two integers `u` and `v` (indicating an undirected edge between node `u` and node `v`).
+
+#### Output:
+- Return `"Yes"` if there is a cycle in the graph, otherwise return `"No"`.
+
+#### Example:
+```plaintext
+Input:
+n = 4, e = 4
+Edges = [(0, 1), (1, 2), (2, 3), (3, 1)]
+
+Output:
+Yes
+
+Explanation:
+The graph is represented as follows in adjacency list representation:
+0 -> 1
+1 -> 2
+2 -> 3
+3 -> 1
+
+From the above representation, we can see that there exists a cycle: 1 -> 2 -> 3 -> 1.
 ```
+
+### 4.5 Write a function to convert an infix expression to postfix expression
+
+- Input: a+b*(c^d)
+- Output: abcd^*+
+
+
+### 4.6 Write a function to find the maximum for each and every contiguous subarray of size k.
+
+- Input: N = 9, K = 3 arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6}
+- Output: {3, 3, 4, 5, 5, 5, 6}
+- Explanation: In the first subarray of size 3: {1,2,3}, the value 3 is maximum, similarly for all such subarrays for size 3.
+
+
+### 4.7 Write a function to merge two sorted Binary Search Trees (BSTs) into a single sorted list.
+
+#### Input:
+- Two Binary Search Trees (BSTs) are provided.
+  - The first BST is represented as follows:
+
+  ```plaintext
+         7
+       /   \
+      5     9
+  ```
+  - The first BST is represented as follows:
+  ```plaintext
+         4
+       /   \
+      3     12
+  ```
+#### Output: 3 4 5 7 9 12 
+
+
+### 4.8 Write a function to print all unique rows of the given matrix.
+Input:
+
+     {{1, 1, 1, 0, 0},
+
+      {0, 1, 0, 0, 1},
+
+      {1, 0, 1, 1, 0},
+
+      {0, 1, 0, 0, 1},
+
+      {1, 1, 1, 0, 0}}
+
+
+Output:
+
+    {{1, 1, 1, 0, 0},
+
+     {0, 1, 0, 0, 1},
+
+     {1, 0, 1, 1, 0}}
+
+
+### 4.9 Write a function to find number of subarrays with product less than K
+
+- Input: arr = [1, 6, 2, 3, 2, 1], k = 12
+- Output: 11     
+
+
+### 4.10 Find the subsequence of length 3 with the highest product from a sequence of non-negative integers, with the elements in increasing order.
+
+- Input: n = 8 arr[ ] = {6, 7, 10, 1, 2, 3, 11, 12}
+- Output: {10, 11, 12}
+
+The three increasing elements of the given arrays are 10, 11, and 12, which form a three-size subsequence with the highest product.
+
+
+### 4.11 Write a function to implement Quicksort on Doubly Linked List
+
+- Input: 8<->10<->1<->7<->6
+- Output: 1<->6<->7<->8<->10
+
+
+### 4.12 Write a function to connect nodes at the same level of a binary tree
+
+Input:              
+
+                          100    
+
+                        /     \                
+
+                      13      15   
+
+                   /  \         \       
+
+                 14    1        20 
+
+     
+
+Output:          
+                 
+                         100-> NULL    
+
+                        /      \                
+
+                    13   ->  15   -> NULL
+
+                  /      \           \       
+
+               14  ->  1   -> 20 -> NULL
+
+
+### 4.13 Write a function to find number of structurally unique binary trees are possible
+
+Input: N = 3 
+
+Output: 5 for N = 3, there are 5 possible BSTs:
+```plaintext
+  1            3      3          2 1
+
+   \         /      /          /  \   \
+
+     3      2      1          1    3     2
+
+   /      /          \                     \
+
+ 2      1             2                     3
+```
+
+
+### 4.14 Implement LRU(Least Recently Used) Cache
+
+### 4.15 Write a function to determine whether duplicate elements in a given array are within a given distance of each other.
+
+- Input: arr[] = {1, 2, 3, 4, 2, 1, 2} range=3
+- Output: True
+
+
+### 4.16 Given an m x n 2D grid map of '1’s which represents land and '0’s that represents water return the number of islands (surrounded by water and formed by connecting adjacent lands in 2 directions - vertically or horizontally).
+
+Given an `m x n` 2D grid map where:
+- '1' represents land
+- '0' represents water
+
+Return the number of islands. An island is formed by connecting adjacent lands vertically or horizontally and is surrounded by water.
+
+#### Assumptions:
+- The boundary of the grid is surrounded by water.
+
+#### Constraints:
+- `m == grid.length`
+- `n == grid[i].length`
+- `1 <= m, n <= 300`
+- `grid[i][j]` can only be `'0'` or `'1'`.
+
+#### Example:
+
+```plaintext
+Input: 
+grid = [
+  ["1", "1", "1", "0", "0"],
+  ["1", "1", "0", "0", "0"],
+  ["0", "0", "1", "0", "1"],
+  ["0", "0", "0", "1", "1"]
+]
+
+Output: 3
+```
+
+### 4.17 What is topological sorting in a graph?
+
+- Topological sorting is a linear ordering of vertices such that for every directed edge ij, vertex i comes before j in the ordering.
+- Topological sorting is only possible for Directed Acyclic Graph (DAG).
+- Applications:
+    - jobs scheduling from the given dependencies among jobs.
+    - ordering of formula cell evaluation in spreadsheets
+ordering of compilation tasks to be performed in make files,
+    - data serialization
+    - resolving symbol dependencies in linkers.
