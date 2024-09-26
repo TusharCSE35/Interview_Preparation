@@ -316,38 +316,495 @@ Some of the algorithms which use the Divide and Conquer Algorithmic paradigm are
 - Quick Sort
 - Closest pair of points.
 
-#### 5.2. What do you understand by the Asymptotic Notations?
+### 5.2. What do you understand by the Asymptotic Notations?
+Asymptotic analysis is a technique that is used for determining the efficiency of an algorithm that does not rely on machine-specific constants and avoids the algorithm from comparing itself to the time-consuming approach. For asymptotic analysis, asymptotic notation is a mathematical technique that is used to indicate the temporal complexity of algorithms.
 
-#### 5.3. What do you understand by the best case, worst case, and average case scenario of an algorithm?  
+The following are the three most common asymptotic notations.
+
+- **Big Theta Notation: (θ Notation)**
+The exact asymptotic behaviour is defined using the theta (θ) Notation. It binds functions from above and below to define behaviour. Dropping low order terms and ignoring leading constants is a convenient approach to get Theta notation for an expression.
+
+<p align="center">
+    <img src="a_image/The_Theta_Notation.png" alt="Types of Data Structures" width="300" height="250"/>
+</p><br>
+
+- **Big O Notation:**
+The Big O notation defines an upper bound for an algorithm by bounding a function from above. Consider the situation of insertion sort: in the best case scenario, it takes linear time, and in the worst case, it takes quadratic time. Insertion sort has a time complexity O(n^2). It is useful when we just have an upper constraint on an algorithm's time complexity.
+
+<p align="center">
+    <img src="a_image/Big_O.png" alt="Types of Data Structures" width="300" height="250"/>
+</p><br>
+
+- **Big Omega (Ω) Notation:**
+The Ω Notation provides an asymptotic lower bound on a function, just like Big O notation does. It is useful when we have a lower bound on an algorithm's time complexity.
+
+<p align="center">
+    <img src="a_image/Omega.png" alt="Types of Data Structures" width="300" height="250"/>
+</p><br>
+
+### 5.3. What do you understand by the best case, worst case, and average case scenario of an algorithm?  
+The mathematical foundation/framing of an algorithm's run time performance is defined by asymptotic analysis. We can easily determine the best case, average case, and worst-case scenarios of an algorithm using asymptotic analysis.
+
+- **Best Case Scenario of an Algorithm:** The best-case scenario for an algorithm is defined as the data arrangement in which the algorithm performs the best. Take a binary search, for example, where the best-case scenario is if the target value is in the very centre of the data we are looking for. The best-case scenario for binary search would have a time complexity of O(1) or constant time complexity.
+- **Worst Case Scenario of an Algorithm:** The worst collection of input for a given algorithm is referred to as the worst-case scenario of an Algorithm. For example, quicksort can perform poorly if the pivot value is set to the largest or smallest element of a sublist. Quicksort will degenerate into an algorithm with a time complexity of O(n^2), where n is the size of the list to be sorted.
+- **Average Case Scenario of an Algorithm:** The average-case complexity of an algorithm is the amount of some computational resource (usually time) used by the process, averaged over all possible inputs, according to computational complexity theory. For example, the average-case complexity of the randomised quicksort algorithm is O(n*log(n)), where n is the size of the list to be sorted.
+---
 
 ### 6. Sorting Algorithms
 
-#### 6.1. What is the space complexity of the selection sort algorithm?
+### 6.1. What is the space complexity of the selection sort algorithm?
+Selection sort is an in-place sorting method, which implies it does not require any additional or minimal data storage. Therefore, the selection sort algorithm has a constant space complexity or O(1) space complexity.
 
-#### 6.2. What is the space complexity of the insertion sort algorithm?
+### 6.2. What is the space complexity of the insertion sort algorithm?
+Insertion sort is an in-place sorting method, which implies it does not require any additional or minimal data storage. In insertion sort, only a single list element must be stored outside of the starting data, resulting in a constant space complexity or O(1) space complexity.
 
-#### 6.3. Describe the heap sort algorithm.
+### 6.3. Describe the heap sort algorithm.
 
-#### 6.4. Describe the bubble sort algorithm with the help of an example.
+**1. Heap Construction (buildMaxHeap):**
+- The algorithm starts by turning the input array into a max heap, where each parent node is greater than its children.
+- The buildMaxHeap() function creates this heap structure in O(n) time, as a result of heapifying the elements from the middle to the beginning of the array.
 
-#### 6.5. Describe the quick sort algorithm.
+**2. Sorting Phase:**
+- After the max heap is built, the largest element (the root of the heap) is at the first index.
+- The algorithm swaps the root with the last element of the heap (effectively moving the largest element to its correct sorted position).
+- Then, the size of the heap is reduced by one, and the heap property is restored by calling siftDown() (or heapify) on the new root, which takes O(log n) time.
 
-#### 6.6. Describe the merge sort algorithm.  
+**3. Repeat:**
+- The process is repeated until only one element is left in the heap.
+- Each time, the largest element is moved to the sorted portion, while the unsorted portion is re-heapified.
 
+#### Time Complexity:
+- **Heap Construction:** The buildMaxHeap() runs in O(n) time.
+- **Heapify Calls:** Each call to siftDown() (heapify) takes O(log n) time, and we call it n times during the sorting process (for each element in the array).
+- Therefore, the total time complexity is O(n log n), which is very efficient compared to other comparison-based sorting algorithms like Selection Sort (O(n²)).
+
+#### Space Complexity
+- Heap Sort is in-place and uses only a constant amount of extra memory for a few variables (like loop counters and a temporary variable to swap elements).
+- Thus, the space complexity of Heap Sort is O(1).
+
+### Why It's More Efficient Than Selection Sort:
+- In **Selection** Sort, finding the maximum element in the unsorted portion requires scanning the unsorted part in O(n) time, and it repeats this for each element.
+- **Heap** Sort improves this by using a heap to extract the maximum element in O(log n) time, making it much faster than Selection Sort.
+
+In conclusion, Heap Sort is an efficient, comparison-based, in-place sorting algorithm with a time complexity of O(n log n) and a space complexity of O(1).
+
+### 6.4. Describe the bubble sort algorithm with the help of an example.
+Bubble Sort is a simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.
+
+**Steps:**
+- Start from the beginning of the list.
+- Compare adjacent elements.
+- Swap them if they are out of order.
+- Move to the next pair and repeat until the end of the list.
+- Repeat the entire process for all elements, ignoring the already sorted part.
+
+### Example List: `[5, 2, 9, 1, 5, 6]`
+
+#### Pass 1:
+1. **Compare 5 and 2** → Swap → `[2, 5, 9, 1, 5, 6]`
+2. **Compare 5 and 9** → No swap.
+3. **Compare 9 and 1** → Swap → `[2, 5, 1, 9, 5, 6]`
+4. **Compare 9 and 5** → Swap → `[2, 5, 1, 5, 9, 6]`
+5. **Compare 9 and 6** → Swap → `[2, 5, 1, 5, 6, 9]`
+
+At the end of **Pass 1**, the largest element (9) is in its correct position.
+
+#### Pass 2:
+1. **Compare 2 and 5** → No swap.
+2. **Compare 5 and 1** → Swap → `[2, 1, 5, 5, 6, 9]`
+3. **Compare 5 and 5** → No swap.
+4. **Compare 5 and 6** → No swap.
+
+At the end of **Pass 2**, the second-largest element (6) is in its correct position.
+
+#### Pass 3:
+1. **Compare 2 and 1** → Swap → `[1, 2, 5, 5, 6, 9]`
+2. **Compare 2 and 5** → No swap.
+3. **Compare 5 and 5** → No swap.
+
+At the end of **Pass 3**, the third-largest element (5) is in its correct position.
+
+#### Pass 4:
+1. **Compare 1 and 2** → No swap.
+2. **Compare 2 and 5** → No swap.
+
+At the end of **Pass 4**, the list is fully sorted.
+
+### Final Sorted List: `[1, 2, 5, 5, 6, 9]`
+
+After 4 passes, the list is completely sorted!
+
+**Time Complexity:**
+- Worst/Average: O(n²)
+- Best (Optimized): O(n)
+
+**Space Complexity:**
+- O(1) (In-place)
+
+Bubble Sort is simple but inefficient for large datasets due to its quadratic time complexity.
+
+### 6.5. Describe the quick sort algorithm.
+
+Quicksort is an efficient, in-place, comparison-based sorting algorithm that uses the divide and conquer strategy. It was developed by Tony Hoare in 1959 and is widely used due to its average-case performance of **O(n log n)**, making it faster than other algorithms like bubble sort or insertion sort for large datasets.
+
+### How Quicksort Works
+
+1. **Choose a Pivot**:
+   - Select an element from the array as the pivot (this can be the first element, last element, a random element, or the median).
+
+2. **Partition the Array**:
+   - Rearrange the array elements so that:
+     - Elements smaller than the pivot are moved to the left of the pivot.
+     - Elements larger than the pivot are moved to the right.
+   - After partitioning, the pivot is in its correct sorted position.
+
+3. **Recursion**:
+   - Recursively apply the same steps to the subarrays formed by dividing the array around the pivot.
+   - **Base case**: If the subarray has fewer than two elements, it is already sorted.
+
+### Example
+Let's consider an array: `[10, 7, 8, 9, 1, 5]`
+
+#### Step 1 - Choose a Pivot:
+- Choose the last element `5` as the pivot.
+
+#### Step 2 - Partition the Array:
+- After rearranging based on the pivot, the array becomes:
+  
+  `[1, 5, 8, 9, 10, 7]`
+  
+  The pivot `5` is now in its correct position.
+
+#### Step 3 - Recursion:
+- Apply quicksort to the left subarray `[1]` (already sorted) and the right subarray `[8, 9, 10, 7]`.
+- Repeat the steps for the right subarray using `7` as the pivot until the entire array is sorted.
+
+### Time Complexity
+- **Best and Average Case**: O(n log n)  
+  This occurs when the pivot divides the array into roughly equal halves.
+  
+- **Worst Case**: O(n²)  
+  This happens when the pivot consistently results in unbalanced partitions (e.g., selecting the smallest or largest element as the pivot each time).
+
+### Space Complexity
+- O(log n) due to the recursive nature of the algorithm.  
+  Quicksort is an in-place algorithm, meaning it does not require extra space for an additional array.
+
+### Key Points
+- **Not Stable**: Quicksort does not preserve the relative order of elements with equal keys.
+- **In-Place Algorithm**: It sorts the array without requiring additional memory.
+- **Efficient**: It is faster than many other algorithms like bubble sort or insertion sort, especially for large datasets.
+
+
+### 6.6. Describe the merge sort algorithm.  
+Merge sort (also known as mergesort) is a general-purpose, comparison-based sorting algorithm developed in computer science. The majority of its implementations result in a **stable sort**, which indicates that the order of equal elements in the input and output is the same. In 1945, John von Neumann devised the merge sort method, which is a **divide and conquer** algorithm.
+
+### How Merge Sort Works
+
+1. **Separate the List**:
+   - Divide the unsorted list into `n` sublists, each containing one element. 
+   - A list of one element is considered sorted.
+
+2. **Merge Sublists**:
+   - Repeatedly merge sublists to create new sorted sublists until only one sublist remains. 
+   - The final remaining sublist is the sorted list.
+
+<p align="center">
+    <img src="a_image/merge_sort_algorithm.png" alt="Types of Data Structures" width="400" height="500"/>
+</p><br>
+
+### Time Complexity
+- **Time Complexity**: O(n log n)  
+  where `n` is the size of the list of elements to be sorted.
+
+### Space Complexity
+- **Space Complexity**: O(n)  
+  Merge sort has a linear space complexity, as it requires additional space for temporary sublists during the merging process.
+
+### Key Points
+- **Stable Sort**: Maintains the relative order of equal elements.
+- **Divide and Conquer**: Utilizes a divide and conquer strategy for sorting.
+- **Efficiency**: Merge sort is efficient for large datasets and guarantees a time complexity of O(n log n).
+
+---
 ### 7. Trees and Graphs
 
-#### 7.1. Define tree traversal and list some of the algorithms to traverse a binary tree.
+### 7.1. Define tree traversal and list some of the algorithms to traverse a binary tree.
 
-#### 7.2. Devise an algorithm to insert a node in a Binary Search Tree.
+Tree traversal is the process of visiting each node in a tree data structure, typically to perform an operation on each node, such as printing its value, searching for a value, or modifying the node's data. There are different methods to traverse a binary tree, each serving various purposes depending on the application.
 
-#### 7.3. Explain the Dijkstra's Algorithm to find the shortest path between a given node in a graph to any other node in the graph.  
+### Types of Tree Traversal
+
+#### 1. Depth-First Traversal (DFT)
+- Visits nodes in a deep manner, exploring as far as possible along each branch before backtracking.
+- Common algorithms for depth-first traversal:
+  - **Inorder Traversal**: Visit the left subtree, then the root node, and finally the right subtree.
+  - **Preorder Traversal**: Visit the root node first, then the left subtree, and finally the right subtree.
+  - **Postorder Traversal**: Visit the left subtree first, then the right subtree, and finally the root node.
+
+#### 2. Breadth-First Traversal (BFT)
+- Visits all nodes at the present depth level before moving on to nodes at the next depth level.
+- Common algorithms for breadth-first traversal:
+  - **Level Order Traversal**: Visit nodes level by level from the root down to the leaves, typically using a queue.
+
+### Summary of Traversal Algorithms
+
+| Traversal Type       | Description                                              |
+|----------------------|----------------------------------------------------------|
+| **Inorder**          | Left → Root → Right                                     |
+| **Preorder**         | Root → Left → Right                                     |
+| **Postorder**        | Left → Right → Root                                     |
+| **Level Order**      | Visit nodes level by level, using a queue               |
+
+
+### 7.2. Devise an algorithm to insert a node in a Binary Search Tree.
+
+Inserting a node in a BST involves placing the new node in the correct position based on the properties of the BST, where the left subtree contains nodes with values less than the node's value, and the right subtree contains nodes with values greater than the node's value.
+
+### Algorithm
+
+1. **Start at the root node.**
+   - Assign the current node to the root.
+
+2. **Compare the value to be inserted with the current node's value:**
+   - If the value is **less than** the current node's value:
+     - Check if the current node has a left child:
+       - If yes, move to the left child and repeat step 2.
+       - If no, insert the new node as the left child.
+   - If the value is **greater than** the current node's value:
+     - Check if the current node has a right child:
+       - If yes, move to the right child and repeat step 2.
+       - If no, insert the new node as the right child.
+
+3. **End the process.**
+
+### Example:
+
+Consider the following BST:
+ ```
+                   10
+                  /  \
+                 5   15
+```
+To insert `7`:
+
+1. Start at the root (10).
+2. Since `7 < 10`, move left to (5).
+3. Since `7 > 5`, insert `7` as the right child of `5`.
+
+The updated BST:
+```
+                 10
+                /  \
+               5   15
+                \
+                 7
+```
+
+### 7.3. Explain the Dijkstra's Algorithm to find the shortest path between a given node in a graph to any other node in the graph. 
+
+Dijkstra's algorithm is a method for finding the shortest paths between nodes in a graph, which can represent road networks. Developed by Edsger W. Dijkstra in 1956, it is widely used to compute the shortest path from a single source node to all other nodes in a graph.
+
+### Algorithm Steps:
+
+1. **Initialization:**
+   - Mark all nodes as unvisited.
+   - Assign a tentative distance value to each node:
+     - Set the distance of the starting node to zero.
+     - Set the distance of all other nodes to infinity.
+   - Set the starting node as the current node.
+
+2. **Evaluate Neighbors:**
+   - For the current node, consider all of its unvisited neighbors.
+   - Calculate their tentative distances through the current node. 
+     - If the current node's distance is `5` and the edge to neighbor `B` is `3`, the distance to `B` will be `5 + 3 = 8`.
+   - If this newly calculated distance is less than the previously assigned value, update the tentative distance.
+
+3. **Mark Current Node as Visited:**
+   - Once all neighbors have been evaluated, mark the current node as visited and remove it from the unvisited set.
+
+4. **Select Next Current Node:**
+   - If the destination node has been visited or if the smallest tentative distance among the unvisited nodes is infinity (indicating no connection), the algorithm stops.
+   - Otherwise, select the unvisited node with the smallest tentative distance as the new current node and repeat from step 2.
+
+5. **Termination:**
+   - The algorithm ends when the destination node is marked as visited or when there are no remaining unvisited nodes.
+
+<p align="center">
+    <img src="a_image/Dijkstra's_Algorithm.png" alt="Types of Data Structures" width="600" height="200"/>
+</p><br>
+
+## Example Graph
+
+<div style="text-align: center;">
+<pre>
+             A
+           /   \
+          1     4
+         /       \
+         B---2---C
+</pre>
+</div>
+
+- **Edges**: A to B (1), A to C (4), B to C (2)
+
+## Steps of the Algorithm
+
+1. **Initialization**:
+   - Start at node `A`, set its distance to `0`.
+   - Set the distance of all other nodes to infinity (`∞`).
+
+   | Node | Distance | Previous Node |
+   |------|----------|---------------|
+   | A    | 0        | None          |
+   | B    | ∞        | None          |
+   | C    | ∞        | None          |
+
+2. **Evaluate Neighbors of A**:
+   - Current Node: A
+   - Update distances for neighbors:
+     - Distance to B: `0 + 1 = 1`
+     - Distance to C: `0 + 4 = 4`
+
+   | Node | Distance | Previous Node |
+   |------|----------|---------------|
+   | A    | 0        | None          |
+   | B    | 1        | A             |
+   | C    | 4        | A             |
+
+3. **Mark A as Visited** and Select Next Current Node:
+   - Mark A as visited.
+   - Current Node: B (smallest distance 1).
+
+4. **Evaluate Neighbors of B**:
+   - Update distance to C:
+     - Distance to C through B: `1 + 2 = 3` (less than previous 4).
+
+   | Node | Distance | Previous Node |
+   |------|----------|---------------|
+   | A    | 0        | None          |
+   | B    | 1        | A             |
+   | C    | 3        | B             |
+
+5. **Mark B as Visited** and Select Next Current Node:
+   - Mark B as visited.
+   - Current Node: C (smallest distance 3).
+
+6. **Evaluate Neighbors of C**:
+   - C has no unvisited neighbors.
+
+7. **Mark C as Visited**:
+   - Mark C as visited.
+
+### Final Distances from A
+
+The shortest distances from A to all nodes are:
+
+| Node | Distance | Previous Node |
+|------|----------|---------------|
+| A    | 0        | None          |
+| B    | 1        | A             |
+| C    | 3        | B             |
+
+
+### Complexity
+
+- **Time Complexity:** O(|E| + |V| log |V|), where |V| is the number of vertices and |E| is the number of edges.
+- **Space Complexity:** O(|V|) for storing distances.
+
+Dijkstra's algorithm is efficient for graphs with non-negative weights and is commonly used in various applications such as GPS navigation systems and network routing protocols.
+
+---
 
 ### 8. Miscellaneous
 
-#### 8.1. What are recursive algorithms? State the important rules which every recursive algorithm must follow.
+### 8.1. What are recursive algorithms? State the important rules which every recursive algorithm must follow.
+Recursive algorithm is a way of tackling a difficult problem by breaking it down into smaller and smaller subproblems until the problem is small enough to be solved quickly. It usually involves a function that calls itself (property of recursive functions).
 
-#### 8.2. Can we use the binary search algorithm for linked lists? Justify your answer.
+The three laws which must be followed by all recursive algorithms are as follows:
 
-#### 8.3. Write an algorithm to find the maximum subarray sum for a given array.
+- There should be a base case.
+- It is necessary for a recursive algorithm to call itself.
+- The state of a recursive algorithm must be changed in order for it to return to the base case.
 
-#### 8.4. What are few of the most widely used cryptographic algorithms?
+
+### 8.2. Can we use the binary search algorithm for linked lists? Justify your answer.
+No, we cannot use the binary search algorithm for linked lists. 
+
+**Explanation:** 
+Because random access is not allowed in linked lists, reaching the middle element in constant or O(1) time is impossible. As a result, the usage of a binary search algorithm on a linked list is not possible
+
+### 8.3. Write an algorithm to find the maximum subarray sum for a given array.
+
+Kadane's algorithm is an efficient method to find the maximum subarray sum for a given array. It operates in linear time, making it suitable for large datasets. The algorithm works by iterating through the array and calculating the maximum subarray sum ending at each position.
+
+### How It Works
+
+1. **Initialize Variables**:
+   - `bestSum` = INT_MIN (a very small number to ensure any subarray sum will be larger)
+   - `currentSum` = 0 (initialized to 0 for the empty subarray)
+
+2. **Iterate Through the Array**:
+   For each element `A[i]` in the array:
+   - Update `currentSum` by adding the current element:
+     - `currentSum = currentSum + A[i]`
+   - Update `bestSum` if `currentSum` is greater:
+     - If `bestSum < currentSum`, then `bestSum = currentSum`
+   - If `currentSum` becomes negative, reset it to 0:
+     - If `currentSum < 0`, then `currentSum = 0`
+
+3. **Return the Result**:
+   After looping through the array, return `bestSum`.
+
+### Pseudocode:
+
+```plaintext
+function kadane(A):
+    bestSum = INT_MIN
+    currentSum = 0
+
+    for each element A[i] in array A:
+        currentSum = currentSum + A[i]
+        if bestSum < currentSum:
+            bestSum = currentSum
+        if currentSum < 0:
+            currentSum = 0
+
+    return bestSum
+```    
+**For Example:** A = `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`
+
+#### 1.Initialization:
+
+- bestSum = INT_MIN
+- currentSum = 0
+
+#### 2.Iteration:
+- i = 0: currentSum = -2, bestSum = max(INT_MIN, -2) = -2
+- i = 1: currentSum = -1, bestSum = max(-2, -1) = -1
+- i = 2: currentSum = -4, bestSum = -1 (reset currentSum to 0)
+- i = 3: currentSum = 4, bestSum = max(-1, 4) = 4
+- i = 4: currentSum = 3, bestSum = 4
+- i = 5: currentSum = 5, bestSum = max(4, 5) = 5
+- i = 6: currentSum = 6, bestSum = max(5, 6) = 6
+- i = 7: currentSum = 1, bestSum = 6
+- i = 8: currentSum = 5, bestSum = 6
+
+#### 3.Final Result:
+- After iterating through the array, the maximum subarray sum is bestSum = `6`.
+
+
+**Time Complexity:** O(n), where n is the number of elements in the array.
+**Space Complexity:** O(1), as it uses a constant amount of space.
+
+### 8.4. What are few of the most widely used cryptographic algorithms?
+A few of the most widely used cryptographic algorithms are as follows:
+
+- IDEA
+- CAST
+- CMEA
+- 3-way
+- Blowfish
+- GOST
+- LOKI
+- DES and Triple DES.
