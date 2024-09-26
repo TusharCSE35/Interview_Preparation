@@ -149,25 +149,172 @@ A few problems which can be solved using the Dynamic Programming (DP) Algorithmi
 - Shortest Path between any two nodes in a graph (Floyd Warshall Algorithm)
 
 
-#### 2.3. Write an algorithm for counting the number of leaf nodes in a binary tree.
+### 2.3. Write an algorithm for counting the number of leaf nodes in a binary tree.
 
-#### 2.4. Write down an algorithm for adding a node to a linked list sorted in ascending order (maintaining the sorting property).  
+An algorithm for counting the number of leaf nodes in a binary tree is given below:
+
+- Define a function that takes the root node of the binary tree as input.
+- Check if the current node is NULL: If it is, return 0 (base case).
+- Check if the current node is a leaf node: A leaf node is defined as a node with no left and right children. If both children are NULL, return 1.
+- Recursively call the function for the left and right child nodes, and sum the results.
+- Return the total count of leaf nodes.
+
+```cpp
+#include <iostream>
+
+// Definition for a binary tree node
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+// Function to count the number of leaf nodes in a binary tree
+int countLeafNodes(TreeNode* root) {
+    // Base case: if the current node is NULL
+    if (root == NULL) {
+        return 0;
+    }
+    
+    // If the current node is a leaf node
+    if (root->left == NULL && root->right == NULL) {
+        return 1;
+    }
+
+    // Recur for left and right children and sum the results
+    return countLeafNodes(root->left) + countLeafNodes(root->right);
+}
+
+// Main function to demonstrate the countLeafNodes function
+int main() {
+    // Creating a simple binary tree
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    root->right->left = new TreeNode(6);
+    root->right->right = new TreeNode(7);
+
+    // Counting leaf nodes
+    int leafCount = countLeafNodes(root);
+    std::cout << "Number of leaf nodes: " << leafCount << std::endl;
+
+    // Cleanup memory (not shown here for simplicity, but recommended in real applications)
+    // ... (code to delete allocated nodes)
+
+    return 0;
+}
+```
+
+#### Explanation
+- **Base Case:** The function first checks if the node is NULL and returns 0.
+- **Leaf Node Check:** If both the left and right children of the node are NULL, it identifies the node as a leaf and returns 1.
+- **Recursive Count:** The function is called recursively for both left and right children, adding their counts together.
+
+#### Time Complexity
+The time complexity is O(n), where n is the number of nodes in the binary tree, as each node is visited once.
+
+### 2.4. Write down an algorithm for adding a node to a linked list sorted in ascending order (maintaining the sorting property).  
+
+An algorithm for adding a node to a link list sorted in ascending order (maintaining the sorting property) is given below:
+
+- **Step 1:** Check if the linked list has no value (or is empty). If yes, then set the new node as the head and return it.
+- **Step 2:** Check if the value of the node to be inserted is smaller than the value of the head node. If yes, place it at the beginning and make it the head node.
+- **Step 3:** Find the suitable node after which the input node should be added in a loop. To discover the required node, begin at the head and work your way forward until you reach a node whose value exceeds the input node. The preceding node is the correct node.
+- **Step 4:** After the correct node is found in step 3, insert the node.
+---
 
 ### 3. Searching Algorithms
 
-#### 3.1. Describe the Binary Search Algorithm.
+### 3.1. Describe the Binary Search Algorithm.
+To perform a binary search on a list of elements, the list must be sorted first. This algorithm follows the Divide and Conquer approach. The Binary Search Algorithm works by repeatedly dividing the search range in half to find the target value in the sorted list. 
 
-#### 3.2. Describe the Linear Search Algorithm.
+<p align="center">
+    <img src="a_image/binary_search.png" alt="Types of Data Structures" width="400" height="350"/>
+</p><br>
 
-#### 3.3. What do you understand by a searching algorithm? List a few types of searching algorithms.  
+Here’s how it works:
+
+**Steps:**
+1. **Initialization:** Create an interval spanning the entire list.
+2. **Compare** \( x \) with the middle element:
+   - If \( x \) matches the middle element, return its index.
+   - If \( x \) is greater, narrow the interval to the right half.
+   - If \( x \) is smaller, narrow the interval to the left half.
+3. **Repeat** until the element is found or the interval is empty.
+4. **Terminate** the search if the interval is empty.
+
+**Complexity:**
+- **Time Complexity:** \( O(log n) \)
+- **Space Complexity:** \( O(1) \)
+
+### 3.2. Describe the Linear Search Algorithm.
+
+To find an element in a group of elements, the linear search can be used. It works by traversing the list of elements from the beginning to the end and inspecting each element.
+
+<p align="center">
+    <img src="a_image/Linear_Search_Algorithm.png" alt="Types of Data Structures" width="400" height="200"/>
+</p><br>
+
+**Steps:**
+1. **Traverse the list:** Use a loop to go through each element.
+2. **Compare values:** In each iteration, compare the target value (key) to the current element.
+3. **Print index:** If the values match, print the current index.
+4. **Continue:** If the values do not match, move to the next element.
+5. **Repeat:** Continue steps 1 to 4 until the end of the list is reached.
+
+**Complexity:**
+- **Time Complexity:** \( O(n) \) where \( n \) is the size of the list.
+- **Space Complexity:** \( O(1) \)
+
+### 3.3. What do you understand by a searching algorithm? List a few types of searching algorithms.  
+Searching Algorithms are used to look for an element or get it from a data structure (usually a list of elements). These algorithms are divided into two categories based on the type of search operation:
+
+- **Sequential Search:** This method traverses the list of elements consecutively, checking each element and reporting if the element to be searched is found. Linear Search is an example of a Sequential Search Algorithm.
+- **Interval Search:** These algorithms were created specifically for searching sorted data structures. Because they continually target the centre of the search structure and divide the search space in half, these types of search algorithms are far more efficient than Sequential Search algorithms. Binary Search is an example of an Interval Search Algorithm.
+---
 
 ### 4. Greedy Algorithms
 
 #### 4.1. What do you understand about greedy algorithms? List a few examples of greedy algorithms.  
+A greedy algorithm is an algorithmic method that aims to choose the best optimal decision at each sub-step, eventually leading to a globally optimal solution. This means that the algorithm chooses the best answer available at the time, regardless of the consequences. In other words, when looking for an answer, an algorithm always selects the best immediate, or local, option. Greedy algorithms may identify less than perfect answers for some cases of other problems while finding the overall, ideal solution for some idealistic problems.
+
+The Greedy algorithm is used in the following algorithms to find their solutions:
+
+- Prim's Minimal Spanning Tree Algorithm
+- Kruskal's Minimal Spanning Tree Algorithm
+- Travelling Salesman Problem
+- Fractional Knapsack Problem
+- Dijkstra's Algorithm
+- Job Scheduling Problem
+- Graph  Map Coloring
+- Graph  Vertex Cover.
+---
 
 ### 5. Algorithm Paradigms
 
-#### 5.1. Explain the Divide and Conquer Algorithmic Paradigm. Also, list a few algorithms which use this paradigm.
+### 5.1. Explain the Divide and Conquer Algorithmic Paradigm. Also, list a few algorithms which use this paradigm.
+
+Divide and Conquer is an algorithm paradigm, not an algorithm itself. It is set up in such a way that it can handle a large amount of data, split it down into smaller chunks, and determine the solution to the problem for each of the smaller chunks. It combines all of the piecewise solutions of the smaller chunks to form a single global solution. This is known as the divide and conquer technique. The Divide and Conquer algorithmic paradigm employ the steps given below:
+
+- **Divide:** The algorithm separates the original problem into a set of subproblems in this step.
+- **Conquer:** The algorithm solves each subproblem individually in this step.
+- **Combine:** In this step, the algorithm combines the solutions to the subproblems to obtain the overall solution.
+
+<p align="center">
+    <img src="a_image/Divide_and_Conquer.png" alt="Types of Data Structures" width="400" height="300"/>
+</p><br>
+
+Some of the algorithms which use the Divide and Conquer Algorithmic paradigm are as follows:
+
+- Binary Search
+- Merge Sort
+- Strassen's Matrix Multiplication
+- Quick Sort
+- Closest pair of points.
 
 #### 5.2. What do you understand by the Asymptotic Notations?
 
