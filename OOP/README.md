@@ -29,8 +29,6 @@ Soon you guys will find all the important oops interview questions
 27. <a href="#27">How do you handle exceptions in C++? What is the purpose of try-catch blocks?</a>
 28. <a href="#28">What are pure virtual functions? How are they used?</a>
 29. <a href="#29">What is a virtual destructor? Why is it necessary in C++?</a>
-30. <a href="#30">Explain the concept of function templates in C++.</a>
-31. <a href="#31">What is the difference between class templates and function templates?</a>
 32. <a href="#32">What is a friend function in C++? How is it different from a member function?</a>
 33. <a href="#33">What are the differences between a struct and a class in C++?</a>
 34. <a href="#34">How does C++ support operator overloading? Give an example.</a>
@@ -568,7 +566,7 @@ https://www.c-sharpcorner.com/blogs/real-life-examples-of-object-oriented-progra
 
 **Answer:-** Function overloading and function overriding are two different concepts in C++ that involve the declaration and use of multiple functions with the same name. Let's explore each concept and understand their differences:
 
-1. Function Overloading:
+1. **Function Overloading:**
 Function overloading refers to the ability to define multiple functions with the same name but different parameters in a single scope. These functions can have the same name but must have different parameter lists (number, type, or order of parameters). The compiler determines which function to call based on the arguments provided during the function call.
 
 Example of function overloading:
@@ -595,7 +593,7 @@ int main() {
 
 In the above example, we have two overloaded functions named `display`. One takes an `int` parameter and the other takes a `double` parameter. Depending on the type of argument provided during the function call, the appropriate overloaded function is called. This allows for flexibility and code reusability when working with different data types.
 
-2. Function Overriding:
+2. **Function Overriding:**
 Function overriding occurs in inheritance when a derived class provides its own implementation of a function that is already defined in its base class. The function in the base class must be declared as `virtual` or be a part of an interface (pure virtual function). The derived class provides a specific implementation of the function, and when called through a base class pointer or reference, the overridden function in the derived class is executed.
 
 Example of function overriding:
@@ -822,11 +820,430 @@ int main() {
 ```
 <a href="#top1">Go to top &#8593;</a>
 
+## 14. <a id="14">What is an inline function? When should it be used?</a>
+
+An **inline function** in C++ is a function that is expanded in line when it is called, meaning the compiler replaces the function call with the actual code of the function. This eliminates the overhead of function calls, such as stack maintenance and jumping to a different memory location. 
+
+To define an inline function, you use the `inline` keyword before the function definition.
+
+Syntax:
+```cpp
+inline return_type function_name(parameters) {
+    // function code
+}
+```
+
+Example:
+```cpp
+inline int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 3); // The function is expanded here
+    cout << result; // Output: 8
+    return 0;
+}
+```
+### When Should Inline Functions Be Used?
+#### Use Inline Functions When:
+- **Performance Optimization:** If the function is short and frequently used, inlining can reduce the overhead of function calls.
+- **Small Functions:** Inline functions are ideal for simple functions with a few lines of code, like getters, setters, or basic mathematical operations.
+- **Frequently Called Functions:** Inlining frequently called functions can improve performance by reducing the time spent in function calls.
+
+#### Avoid Inline Functions When:
+- **Large Functions:** Inlining large functions can increase the size of the binary (code bloat) and reduce performance.
+- **Recursive Functions:** Inline functions are not suitable for recursive functions since it could lead to infinite inlining.
+- **Complex Logic:** Functions with loops, heavy calculations, or complex logic should not be inlined as they could negatively affect performance.
 
 <a href="#top1">Go to top &#8593;</a>
+
+## 15. <a id="15">What is the difference between new and malloc in C++?</a>
+### Difference Between `malloc` and `new` in C++
+
+In C++, both `malloc` and `new` are used to get memory while the program is running, but they have key differences.
+
+### 1. **Basic Usage**
+- **`malloc`:**
+  - A function that gives memory but doesn’t set any value.
+  - Syntax: `void* malloc(size_t size);`
+  - Example:
+    ```cpp
+    int* ptr = (int*)malloc(sizeof(int));
+    ```
+- **`new`:**
+  - An operator that gives memory and can set a starting value.
+  - Syntax: `new type;`
+  - Example:
+    ```cpp
+    int* ptr = new int;
+    ```
+
+### 2. **Initialization**
+- **`malloc`:**  
+  - Gives memory with random data (uninitialized).
+  - Example:
+    ```cpp
+    int* ptr = (int*)malloc(sizeof(int)); // random value
+    ```
+- **`new`:**  
+  - Can give memory with a starting value.
+  - Example:
+    ```cpp
+    int* ptr = new int(0); // value set to 0
+    ```
+
+### 3. **Type Safety**
+- **`malloc`:**  
+  - Returns `void*`, which means you have to convert it to the right type.
+  - Example:
+    ```cpp
+    int* ptr = (int*)malloc(sizeof(int)); // need to cast
+    ```
+- **`new`:**  
+  - Directly gives memory of the correct type.
+  - Example:
+    ```cpp
+    int* ptr = new int; // no need to cast
+    ```
+
+### 4. **Object Construction**
+- **`malloc`:**  
+  - Does not call the constructor (doesn't set up objects).
+  - Example:
+    ```cpp
+    MyClass* obj = (MyClass*)malloc(sizeof(MyClass)); // no setup
+    ```
+- **`new`:**  
+  - Calls the constructor to set up objects.
+  - Example:
+    ```cpp
+    MyClass* obj = new MyClass(); // setup complete
+    ```
+
+### 5. **Freeing Memory**
+- **`malloc`:**  
+  - Use `free()` to release the memory.
+  - Example:
+    ```cpp
+    free(ptr);
+    ```
+- **`new`:**  
+  - Use `delete` to release the memory.
+  - Example:
+    ```cpp
+    delete ptr;
+    ```
+
+### 6. **Error Handling**
+- **`malloc`:**  
+  - Returns `NULL` if it fails to give memory.
+  - Example:
+    ```cpp
+    int* ptr = (int*)malloc(sizeof(int));
+    if (ptr == NULL) {
+        // handle error
+    }
+    ```
+- **`new`:**  
+  - Throws an error if it fails (unless `nothrow` is used).
+  - Example:
+    ```cpp
+    try {
+        int* ptr = new int;
+    } catch (std::bad_alloc& e) {
+        // handle error
+    }
+    ```
+
+### Summary
+
+| Feature                 | `malloc`                      | `new`                          |
+|-------------------------|-------------------------------|--------------------------------|
+| Usage                   | Function                      | Operator                       |
+| Initialization          | Uninitialized                 | Can be initialized             |
+| Type Casting            | Yes                           | No                             |
+| Calls Constructor       | No                            | Yes                            |
+| Free Memory             | `free(ptr);`                  | `delete ptr;`                  |
+| Error Handling          | Returns `NULL`                | Throws an error                |
+
 <a href="#top1">Go to top &#8593;</a>
+
+# 16. <a id="16">What are the differences between a shallow copy and a deep copy?</a>
+| Feature        | Shallow Copy                                                   | Deep Copy                                                      |
+|----------------|--------------------------------------------------------------|---------------------------------------------------------------|
+| **Definition**  | Creates a new object, but copies references to the original object's data. | Creates a new object and recursively copies all objects referenced by the original. |
+| **Memory Usage**| Uses less memory since it only copies references.            | Uses more memory due to copying all data.                     |
+| **Changes Impact**| Changes to the copied object can affect the original object. | Changes to the copied object do not affect the original object. |
+| **Performance** | Faster as it involves copying references only.               | Slower due to copying entire data.                             |
+| **Example**     | If the original object contains a pointer, the shallow copy will point to the same memory location. | A deep copy will create a new memory location and copy the data from the original. |
+
+### C++ Examples:
+
+#### Shallow Copy
+```cpp
+#include <iostream>
+using namespace std;
+
+class Shallow {
+public:
+    int* data;
+
+    Shallow(int value) {
+        data = new int(value);
+    }
+
+    // Shallow copy constructor
+    Shallow(const Shallow& other) {
+        data = other.data;  // Copies the reference
+    }
+
+    ~Shallow() {
+        delete data;  // May cause double deletion
+    }
+};
+
+int main() {
+    Shallow obj1(42);
+    Shallow obj2 = obj1;  // Shallow copy
+    *obj2.data = 100;      // Changes data in obj2
+
+    cout << "obj1 data: " << *obj1.data << endl;  // Outputs: 100
+    cout << "obj2 data: " << *obj2.data << endl;  // Outputs: 100
+    return 0;
+}
+```
+#### Deep Copy
+```cpp
+#include <iostream>
+using namespace std;
+
+class Deep {
+public:
+    int* data;
+
+    Deep(int value) {
+        data = new int(value);
+    }
+
+    // Deep copy constructor
+    Deep(const Deep& other) {
+        data = new int(*other.data);  // Creates a new copy
+    }
+
+    ~Deep() {
+        delete data;  // Safe deletion
+    }
+};
+
+int main() {
+    Deep obj1(42);
+    Deep obj2 = obj1;  // Deep copy
+    *obj2.data = 100;   // Changes data in obj2
+
+    cout << "obj1 data: " << *obj1.data << endl;  // Outputs: 42
+    cout << "obj2 data: " << *obj2.data << endl;  // Outputs: 100
+    return 0;
+}
+```
 <a href="#top1">Go to top &#8593;</a>
+
+
+## 17. <a id="17">Explain the concept of exception handling in C++.</a>
+An exception is an unexpected event that occurs during program execution. For example,
+```plaintext
+divide_by_zero = 7 / 0;
+```
+The above code causes an exception as it is not possible to divide a number by 0. The process of handling these types of errors in C++ is known as exception handling. In C++, we handle exceptions with the help of the `try` and `catch` blocks, along with the `throw` keyword.
+
+- `try` - code that may raise an exception
+- `throw` - throws an exception when an error is detected
+- `catch` - code that handles the exception thrown by the throw keyword
+
+Syntax for Exception Handling in C++
+The basic syntax for exception handling in C++ is given below:
+
+try {
+
+    // code that may raise an exception
+    throw argument;
+}
+
+catch (exception) {
+    // code to handle exception
+} 
+Here, we have placed the code that might generate an exception inside the try block. Every try block is followed by the catch block.
+
+When an exception occurs, the throw statement throws an exception, which is caught by the catch block.
+
+The catch block cannot be used without the try block.
+
+**Example:** C++ Exception Handling
+// program to divide two numbers
+// throws an exception when the divisor is 0
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    double numerator, denominator, divide;
+
+    cout << "Enter numerator: ";
+    cin >> numerator;
+
+    cout << "Enter denominator: ";
+    cin >> denominator;
+
+    try {
+
+        // throw an exception if denominator is 0
+        if (denominator == 0)
+            throw 0;
+
+        // not executed if denominator is 0
+        divide = numerator / denominator;
+        cout << numerator << " / " << denominator << " = " << divide << endl;
+    } 
+
+    catch (int num_exception) {
+        cout << "Error: Cannot divide by " << num_exception << endl;
+    }
+
+    return 0;
+}
+```
+Output 1
+```
+Enter numerator: 72
+Enter denominator: 0
+Error: Cannot divide by 0
+```
+Output 2
+```
+Enter numerator: 72
+Enter denominator: 3
+72 / 3 = 24
+```
+
+The above program divides two numbers and displays the result. But an exception occurs if the denominator is 0.
+
+To handle the exception, we have put the code `divide = numerator / denominator`; inside the `try` block. Now, when an exception occurs, the rest of the code inside the try block is skipped.
+
+The `catch` block catches the thrown`` exception and executes the statements inside it.
+
+If none of the statements in the `try` block generates an exception, the catch `block` is skipped.
+
+
+<p align="center">
+    <img src="oop_image/cpp-try-catch.png" alt="Types of Data Structures" width="600" height="300"/>
+</p><br>
+
+Notice that we have thrown the `int` literal 0 with the code `throw 0`;.
+
+We can throw any literal or variable or class, depending on the situation and depending on what we want to execute inside the `catch` block.
+
+The `catch` parameter int `num_exception` takes the value passed by the `throw` statement i.e. the literal 0.
+
 <a href="#top1">Go to top &#8593;</a>
+
+
+## 18. <a id="18">What is a namespace? How is it used?</a>
+
 <a href="#top1">Go to top &#8593;</a>
+
+## 19. <a id="19">What are the differences between static and dynamic memory allocation?</a>
+
 <a href="#top1">Go to top &#8593;</a>
+
+
+## 20. <a id="20">How does C++ support multiple inheritance?</a>
+
+
 <a href="#top1">Go to top &#8593;</a>
+
+
+## 21. <a id="21">What are smart pointers? Explain their types and usage.</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 22. <a id="22">What is the Standard Template Library (STL) in C++?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 23. <a id="23">Explain the differences between vectors, lists, and arrays in STL.</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 24. <a id="24">What is a lambda function in C++? How is it used?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 25. <a id="25">What is a reference variable in C++?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 27. <a id="27">How do you handle exceptions in C++? What is the purpose of try-catch blocks?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 28. <a id="28">What are pure virtual functions? How are they used?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 29. <a id="29">What is a virtual destructor? Why is it necessary in C++?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 32. <a id="32">What is a friend function in C++? How is it different from a member function?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 33. <a id="33">What are the differences between a struct and a class in C++?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 34. <a id="34">How does C++ support operator overloading? Give an example.</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 35. <a id="35">Explain the concept of dynamic binding in C++.</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 36. <a id="36">What is the difference between a stack and a heap in memory allocation?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 37. <a id="37">How do you handle memory leaks in C++?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 38. <a id="38">Explain the use of the auto keyword in C++11.</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 39. <a id="39">What are the differences between a pointer and a reference in C++?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 40. <a id="40">What is the purpose of the explicit keyword in C++?</a>
+
+<a href="#top1">Go to top &#8593;</a>
+
