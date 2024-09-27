@@ -774,7 +774,7 @@ int main() {
 }
 ```
 #### Output
-```
+```plaintext
 int Number = 7
 double Number = 7.7
 ```
@@ -806,7 +806,23 @@ int main() {
     return 0;
 }
 ```
+
+#### Example of Pass-by-Reference:
+```cpp
+void modifyValue(int &x) {
+    x = 10; // Modifies the original variable
+}
+
+int main() {
+    int num = 5;
+    modifyValue(num);
+    cout << num; // Output: 10 (changed)
+    return 0;
+}
+```
 <a href="#top1">Go to top &#8593;</a>
+
+
 <a href="#top1">Go to top &#8593;</a>
 <a href="#top1">Go to top &#8593;</a>
 <a href="#top1">Go to top &#8593;</a>
