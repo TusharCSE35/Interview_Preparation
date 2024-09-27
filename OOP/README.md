@@ -2129,6 +2129,19 @@ int main() {
 }
 ```
 
+### Explanation of Key Uses
+
+- **Type Deduction**: Variables `intVar`, `doubleVar`, and `stringVar` automatically have their types deduced from their initializer values.
+
+- **Simplifying Complex Types**: The iterator `it` for the vector `vec` is declared using `auto`, making the code cleaner.
+
+- **Using `auto` with Lambda Expressions**: A lambda function `lambda` is defined to add two numbers, demonstrating type deduction for parameters.
+
+- **Return Type Deduction**: The `add` lambda function shows how `auto` can be used in C++14 to deduce return types.
+
+- **Using `auto` with STL Algorithms**: In `std::for_each`, the parameter `n` in the lambda is deduced as the type of the vector elements, demonstrating `auto` in action with STL functions.
+
+This example effectively showcases the versatility and convenience of the `auto` keyword in C++11.
 
 <a href="#top1">Go to top &#8593;</a>
 
