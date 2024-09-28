@@ -26,74 +26,74 @@ Soon you guys will find all the important oops interview questions
 23. <a href="#23">Explain the differences between vectors, lists, and arrays in STL.</a>
 24. <a href="#24">What is a lambda function in C++? How is it used?</a>
 25. <a href="#25">What is a reference variable in C++?</a>
-28. <a href="#28">What are pure virtual functions? How are they used?</a>
-29. <a href="#29">What is a virtual destructor? Why is it necessary in C++?</a>
-32. <a href="#32">What is a friend function in C++? How is it different from a member function?</a>
-33. <a href="#33">What are the differences between a struct and a class in C++?</a>
-34. <a href="#34">How does C++ support operator overloading? Give an example.</a>
-35. <a href="#35">Explain the concept of dynamic binding in C++.</a>
-36. <a href="#36">What is the difference between a stack and a heap in memory allocation?</a>
-37. <a href="#37">How do you handle memory leaks in C++?</a>
-38. <a href="#38">Explain the use of the auto keyword in C++11.</a>
-39. <a href="#39">What are the differences between a pointer and a reference in C++?</a>
-40. <a href="#40">What is the purpose of the explicit keyword in C++?</a>
-41. <a href="#41">How do you implement a copy constructor in C++?</a>
-42. <a href="#42">Explain the concept of const member functions in C++.</a>
-43. <a href="#43">What is the difference between virtual functions and pure virtual functions?</a>
-44. <a href="#44">What is the role of the preprocessor in C++?</a>
-45. <a href="#45">How do you handle multiple exceptions in C++?</a>
-46. <a href="#46">Explain the concept of function pointers in C++.</a>
-47. <a href="#47">What is the difference between new and delete operators in C++?</a>
-48. <a href="#48">How does C++ support multithreading? Explain the concept of thread synchronization.</a>
-49. <a href="#49">What is the difference between a shallow copy and a deep copy? When would you use each?</a>
-50. <a href="#50">Explain the concept of move semantics in C++11. How does it improve performance?</a>
-51. <a href="#51">What is the role of the virtual keyword in C++?</a>
-52. <a href="#52">How does C++ support exception safety? Explain the concept of RAII.</a>
-53. <a href="#53">What are the differences between static binding and dynamic binding in C++?</a>
-54. <a href="#54">Explain the concept of a const pointer versus a pointer to const in C++.</a>
-55. <a href="#55">How do you implement operator overloading for a custom class in C++?</a>
-56. <a href="#56">What is the purpose of the override keyword in C++11?</a>
-57. <a href="#57">Explain the concept of typecasting in C++. What are the different types of typecasting?</a>
-60. <a href="#60">What is the difference between a function object and a lambda function in C++?</a>
-61. <a href="#61">Explain the role of the typeid operator in C++.</a>
-62. <a href="#62">How does C++ handle multiple inheritance? What are the challenges and solutions?</a>
-63. <a href="#63">What is the purpose of the volatile keyword in C++?</a>
-64. <a href="#64">Explain the difference between the pre-increment and post-increment operators in C++.</a>
-65. <a href="#65">What is the role of the explicit keyword in a constructor in C++?</a>
-66. <a href="#66">Explain the concept of the ternary operator in C++.</a>
-67. <a href="#67">What is the difference between the new operator and the new[] operator in C++?</a>
-68. <a href="#68">Explain the usage and benefits of the constexpr keyword in C++11.</a>
-69. <a href="#69">Explain the concept of the Rule of Three/Five/Zero in C++.</a>
-71. <a href="#71">How do you handle circular dependencies in C++?</a>
-72. <a href="#72">What is the difference between static polymorphism and dynamic polymorphism?</a>
-73. <a href="#73">Explain the concept of the noexcept specifier in C++.</a>
-74. <a href="#74">How does C++ support multithreading? What are some threading libraries in C++?</a>
-75. <a href="#75">What is the role of the mutable keyword in C++?</a>
-76. <a href="#76">Explain the concept of the nullptr keyword in C++.</a>
-77. <a href="#77">What is the purpose of the std::move function in C++11?</a>
-78. <a href="#78">How do you handle resource acquisition and release in C++? Explain the concept of Resource Acquisition Is Initialization (RAII).</a>
-79. <a href="#79">What is the difference between a constant pointer and a pointer to a constant in C++?</a>
-80. <a href="#80">Explain the concept of the Standard Template Library (STL) in C++.</a>
-81. <a href="#81">What are the differences between std::vector and std::array in C++?</a>
-82. <a href="#82">What is the difference between std::unique_ptr and std::shared_ptr in C++?</a>
-83. <a href="#83">Explain the concept of consteval in C++20 and its usage.</a>
-84. <a href="#84">What is the purpose of the using keyword in C++?</a>
-85. <a href="#85">How do you implement a thread-safe singleton in C++?</a>
-86. <a href="#86">Explain the concept of the ternary operator in C++ and its usage.</a>
-87. <a href="#87">What is the role of the constexpr specifier in C++?</a>
-88. <a href="#88">Explain the concept of the final specifier in C++.</a>
-89. <a href="#89">What is the difference between a raw pointer and a smart pointer in C++?</a>
-90. <a href="#90">Explain the concept of the auto keyword in C++14 and its usage.</a>
-91. <a href="#91">What are the differences between std::function and function pointers in C++?</a>
-92. <a href="#92">How do you handle memory management in C++ without using smart pointers?</a>
-93. <a href="#93">Explain the concept of the volatile keyword in C++ and its usage.</a>
-94. <a href="#94">What is the difference between the struct padding and struct packing in C++?</a>
-95. <a href="#95">How does C++ support reflection? Are there any reflection mechanisms available?</a>
-96. <a href="#96">Explain the concept of the unnamed namespace in C++.</a>
-97. <a href="#97">What is the difference between a template class and a template specialization in C++?</a>
-98. <a href="#98">Explain the concept of SFINAE (Substitution Failure Is Not An Error) in C++.</a>
-99. <a href="#99">How do you handle file I/O in C++?</a>
-100. <a href="#100">Explain the concept of const correctness in C++.</a>
+26. <a href="#26">What are pure virtual functions? How are they used?</a>
+27. <a href="#27">What is a virtual destructor? Why is it necessary in C++?</a>
+28. <a href="#28">What is a friend function in C++? How is it different from a member function?</a>
+29. <a href="#29">What are the differences between a struct and a class in C++?</a>
+30. <a href="#30">How does C++ support operator overloading? Give an example.</a>
+31. <a href="#31">Explain the concept of dynamic binding in C++.</a>
+32. <a href="#32">What is the difference between a stack and a heap in memory allocation?</a>
+33. <a href="#33">How do you handle memory leaks in C++?</a>
+34. <a href="#34">Explain the use of the auto keyword in C++11.</a>
+35. <a href="#35">What are the differences between a pointer and a reference in C++?</a>
+36. <a href="#36">What is the purpose of the explicit keyword in C++?</a>
+37. <a href="#37">How do you implement a copy constructor in C++?</a>
+38. <a href="#38">Explain the concept of const member functions in C++.</a>
+39. <a href="#39">What is the difference between virtual functions and pure virtual functions?</a>
+40. <a href="#40">What is the role of the preprocessor in C++?</a>
+41. <a href="#41">How do you handle multiple exceptions in C++?</a>
+42. <a href="#42">Explain the concept of function pointers in C++.</a>
+43. <a href="#43">What is the difference between new and delete operators in C++?</a>
+44. <a href="#44">How does C++ support multithreading? Explain the concept of thread synchronization.</a>
+45. <a href="#45">What is the difference between a shallow copy and a deep copy? When would you use each?</a>
+46. <a href="#46">Explain the concept of move semantics in C++11. How does it improve performance?</a>
+47. <a href="#47">What is the role of the virtual keyword in C++?</a>
+48. <a href="#48">How does C++ support exception safety? Explain the concept of RAII.</a>
+49. <a href="#49">What are the differences between static binding and dynamic binding in C++?</a>
+50. <a href="#50">Explain the concept of a const pointer versus a pointer to const in C++.</a>
+51. <a href="#51">How do you implement operator overloading for a custom class in C++?</a>
+52. <a href="#52">What is the purpose of the override keyword in C++11?</a>
+53. <a href="#53">Explain the concept of typecasting in C++. What are the different types of typecasting?</a>
+54. <a href="#54">What is the difference between a function object and a lambda function in C++?</a>
+55. <a href="#55">Explain the role of the typeid operator in C++.</a>
+56. <a href="#56">How does C++ handle multiple inheritance? What are the challenges and solutions?</a>
+57. <a href="#57">What is the purpose of the volatile keyword in C++?</a>
+58. <a href="#58">Explain the difference between the pre-increment and post-increment operators in C++.</a>
+59. <a href="#59">What is the role of the explicit keyword in a constructor in C++?</a>
+60. <a href="#60">Explain the concept of the ternary operator in C++.</a>
+61. <a href="#61">What is the difference between the new operator and the new[] operator in C++?</a>
+62. <a href="#62">Explain the usage and benefits of the constexpr keyword in C++11.</a>
+63. <a href="#63">Explain the concept of the Rule of Three/Five/Zero in C++.</a>
+64. <a href="#64">How do you handle circular dependencies in C++?</a>
+65. <a href="#65">What is the difference between static polymorphism and dynamic polymorphism?</a>
+66. <a href="#66">Explain the concept of the noexcept specifier in C++.</a>
+67. <a href="#67">How does C++ support multithreading? What are some threading libraries in C++?</a>
+68. <a href="#68">What is the role of the mutable keyword in C++?</a>
+69. <a href="#69">Explain the concept of the nullptr keyword in C++.</a>
+70. <a href="#70">What is the purpose of the std::move function in C++11?</a>
+71. <a href="#71">How do you handle resource acquisition and release in C++? Explain the concept of Resource Acquisition Is Initialization (RAII).</a>
+72. <a href="#72">What is the difference between a constant pointer and a pointer to a constant in C++?</a>
+73. <a href="#73">Explain the concept of the Standard Template Library (STL) in C++.</a>
+74. <a href="#74">What are the differences between std::vector and std::array in C++?</a>
+75. <a href="#75">What is the difference between std::unique_ptr and std::shared_ptr in C++?</a>
+76. <a href="#76">Explain the concept of consteval in C++20 and its usage.</a>
+77. <a href="#77">What is the purpose of the using keyword in C++?</a>
+78. <a href="#78">How do you implement a thread-safe singleton in C++?</a>
+79. <a href="#79">Explain the concept of the ternary operator in C++ and its usage.</a>
+80. <a href="#80">What is the role of the constexpr specifier in C++?</a>
+81. <a href="#81">Explain the concept of the final specifier in C++.</a>
+82. <a href="#82">What is the difference between a raw pointer and a smart pointer in C++?</a>
+83. <a href="#83">Explain the concept of the auto keyword in C++14 and its usage.</a>
+84. <a href="#84">What are the differences between std::function and function pointers in C++?</a>
+85. <a href="#85">How do you handle memory management in C++ without using smart pointers?</a>
+86. <a href="#86">Explain the concept of the volatile keyword in C++ and its usage.</a>
+87. <a href="#87">What is the difference between the struct padding and struct packing in C++?</a>
+88. <a href="#88">How does C++ support reflection? Are there any reflection mechanisms available?</a>
+89. <a href="#89">Explain the concept of the unnamed namespace in C++.</a>
+90. <a href="#90">What is the difference between a template class and a template specialization in C++?</a>
+91. <a href="#91">Explain the concept of SFINAE (Substitution Failure Is Not An Error) in C++.</a>
+92. <a href="#92">How do you handle file I/O in C++?</a>
+93. <a href="#93">Explain the concept of const correctness in C++.</a>
 
 
 ## 1. <a id="1">What is the difference between C and C++?</a>
@@ -1521,7 +1521,7 @@ In the above program, the variable a is declared and initialized with a value of
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 28. <a id="28">What are pure virtual functions? How are they used?</a>
+## 26. <a id="26">What are pure virtual functions? How are they used?</a>
 A pure **virtual function** in C++ is a function that has no implementation in the base class and must be overridden by derived classes. It is declared by assigning 0 to the function declaration in the base class. This makes the class **abstract**, meaning that objects of this class cannot be instantiated directly; they can only be instantiated from derived classes that implement all the pure virtual functions.
 
 Syntax:
@@ -1680,7 +1680,7 @@ Summary:
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 29. <a id="29">What is a virtual destructor? Why is it necessary in C++?</a>
+## 27. <a id="27">What is a virtual destructor? Why is it necessary in C++?</a>
 A **virtual destructor** is a destructor that can be overridden in a derived class. It ensures that the correct destructor is called when an object is deleted through a pointer to a base class. This is particularly important when you are dealing with polymorphism, as it prevents potential memory leaks or undefined behavior by ensuring proper cleanup of resources.
 
 ### Why Use a Virtual Destructor?
@@ -1757,7 +1757,7 @@ In summary, if your class has virtual functions, you should almost always have a
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 32. <a id="32">What is a friend function in C++? How is it different from a member function?</a>
+## 28. <a id="28">What is a friend function in C++? How is it different from a member function?</a>
 A **friend function** in C++ is a non-member function that has access to a class's private and protected members. It is declared using the friend keyword inside the class but defined like a regular function. `Friend` functions are often used for operator overloading or when multiple classes need to share access to each other's private data.
 
 #### Example
@@ -1839,7 +1839,7 @@ Explanation:
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 33. <a id="33">What are the differences between a struct and a class in C++?</a>
+## 29. <a id="29">What are the differences between a struct and a class in C++?</a>
 | Feature                    | `struct`                          | `class`                           |
 |----------------------------|-----------------------------------|-----------------------------------|
 | **Default Access Modifier** | Public                            | Private                           |
@@ -1913,7 +1913,7 @@ Private Data: 40
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 34. <a id="34">How does C++ support operator overloading? Give an example.</a>
+## 30. <a id="30">How does C++ support operator overloading? Give an example.</a>
 
 C++ allows operator overloading, enabling custom behavior for operators with user-defined types (e.g., classes). Below is an explanation of an example that overloads the `+` operator for a class representing complex numbers.
 
@@ -1980,7 +1980,7 @@ Result of addition: 4.5 + 6.5i
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 35. <a id="35">Explain the concept of dynamic binding in C++.</a>
+## 31. <a id="31">Explain the concept of dynamic binding in C++.</a>
 
 - **Dynamic Binding** (or **late binding**) refers to resolving the function to be invoked at runtime instead of compile-time.
 - It enables **runtime polymorphism** by allowing the program to determine which method to call based on the actual object type at runtime.
@@ -2017,7 +2017,7 @@ Output: Dog barks
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 36. <a id="36">What is the difference between a stack and a heap in memory allocation?</a>
+## 32. <a id="32">What is the difference between a stack and a heap in memory allocation?</a>
 
 | Feature             | **Stack**                                      | **Heap**                                  |
 |---------------------|------------------------------------------------|-------------------------------------------|
@@ -2055,7 +2055,7 @@ Output: Dog barks
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 37. <a id="37">How do you handle memory leaks in C++?</a>
+## 33. <a id="33">How do you handle memory leaks in C++?</a>
 A **memory leak** occurs when a program allocates memory dynamically (on the heap) but fails to release it after use, leading to wasted memory that can no longer be accessed or reused. This can cause the program to consume more memory over time, potentially leading to crashes or performance degradation.
 
 **1. Manual Deallocation:**
@@ -2089,7 +2089,7 @@ A **memory leak** occurs when a program allocates memory dynamically (on the hea
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 38. <a id="38">Explain the use of the auto keyword in C++11.</a>
+## 34. <a id="34">Explain the use of the auto keyword in C++11.</a>
 The auto keyword in C++11 is used for automatic type deduction. It allows the compiler to automatically determine the type of a variable based on the initializer expression. This feature simplifies code writing and enhances maintainability, especially with complex types.
 
 ```cpp
@@ -2155,7 +2155,7 @@ This example effectively showcases the versatility and convenience of the `auto`
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 39. <a id="39">What are the differences between a pointer and a reference in C++?</a>
+## 35. <a id="35">What are the differences between a pointer and a reference in C++?</a>
 | Feature               | **Pointer**                                       | **Reference**                                |
 |-----------------------|--------------------------------------------------|---------------------------------------------|
 | **Syntax**            | Uses `*` to declare (e.g., `int *ptr`)           | Uses `&` to declare (e.g., `int &ref`)      |
@@ -2186,7 +2186,7 @@ ref = 20;       // Changing value of x through reference
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 40. <a id="40">What is the purpose of the explicit keyword in C++?</a>
+## 36. <a id="36">What is the purpose of the explicit keyword in C++?</a>
 The **explicit** keyword in C++ is used to prevent **implicit conversions** or **implicit constructor** calls that the compiler might otherwise allow. It ensures that constructors and conversion operators are only called explicitly by the programmer, avoiding unintended behavior caused by automatic type conversions.
 
 ### When to Use `explicit`:
@@ -2226,7 +2226,7 @@ Here, the `explicit` keyword prevents the automatic conversion, forcing you to e
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 41. <a id="41">How do you implement a copy constructor in C++?</a>
+## 37. <a id="37">How do you implement a copy constructor in C++?</a>
 A copy constructor creates a new object as a copy of an existing object. It copies the values of the original object into the new object.
 
 #### Simple Example:
@@ -2264,7 +2264,7 @@ int main() {
 Both `obj1` and `obj2` will have the same value (10), but they are separate objects.
 <a href="#top1">Go to top &#8593;</a>
 
-## 42. <a id="42">Explain the concept of const member functions in C++.</a>
+## 38. <a id="38">Explain the concept of const member functions in C++.</a>
 In C++, `const` member functions are functions that are guaranteed not to modify the state (i.e., member variables) of the object they belong to. Declaring a member function as const tells the compiler that this function will not change any of the member variables of the object, making it safe to call on const objects.
 
 ### Syntax:
@@ -2314,7 +2314,7 @@ int main() {
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 43. <a id="43">What is the difference between virtual functions and pure virtual functions?</a>
+## 39. <a id="39">What is the difference between virtual functions and pure virtual functions?</a>
 ### Difference Table
 
 | **Virtual Function**                            | **Pure Virtual Function**                         |
@@ -2383,7 +2383,7 @@ int main() {
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 44. <a id="44">What is the role of the preprocessor in C++?</a>
+## 40. <a id="40">What is the role of the preprocessor in C++?</a>
 The preprocessor in C++ is a tool that processes directives (commands) in the source code before actual compilation. It modifies the code based on these directives, which can include macro definitions, file inclusions, and conditional compilation.
 
 ### Role of the Preprocessor in C++
@@ -2410,7 +2410,7 @@ The preprocessor in C++ is a tool that processes directives (commands) in the so
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 45. <a id="45">How do you handle multiple exceptions in C++?</a>
+## 41. <a id="41">How do you handle multiple exceptions in C++?</a>
 In C++, you can handle multiple exceptions using a combination of try, catch, and specific exception classes. Here’s a brief overview and some examples:
 
 ### Handling Multiple Exceptions in C++
@@ -2472,7 +2472,7 @@ In C++, you can handle multiple exceptions using a combination of try, catch, an
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 46. <a id="46">Explain the concept of function pointers in C++.</a>
+## 42. <a id="42">Explain the concept of function pointers in C++.</a>
 ### What Are Function Pointers?
 - **Function Pointer:** A function pointer is a variable that stores the address of a function. This allows you to call the function indirectly.
 
@@ -2560,7 +2560,7 @@ int main() {
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 47. <a id="47">What is the difference between new and delete operators in C++?</a>
+## 43. <a id="43">What is the difference between new and delete operators in C++?</a>
 ### Difference Between `new` and `delete` Operators in C++
 
 In C++, `new` and `delete` are operators used for dynamic memory management. Below is a summary of their differences:
@@ -2606,7 +2606,7 @@ int main() {
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 48. <a id="48">How does C++ support multithreading? Explain the concept of thread synchronization.</a>
+## 44. <a id="44">How does C++ support multithreading? Explain the concept of thread synchronization.</a>
 C++ supports multithreading primarily through its Standard Library, introduced in C++11, which provides a range of tools for creating and managing threads. Below is a brief explanation of how C++ handles multithreading and the concept of thread synchronization.
 
 ### Multithreading in C++
@@ -2715,7 +2715,7 @@ Thread synchronization is crucial in multithreaded programming to prevent data r
 <a href="#top1">Go to top &#8593;</a>
 
 
-## 50. <a id="50">Explain the concept of move semantics in C++11. How does it improve performance?</a>
+## 45. <a id="45">Explain the concept of move semantics in C++11. How does it improve performance?</a>
 Move semantics, introduced in C++11, is a powerful feature that allows the efficient transfer of resources from one object to another. It optimizes performance by eliminating unnecessary copying of objects, particularly when dealing with temporary objects or those that manage dynamic resources (like memory, file handles, etc.).
 
 ### Key Concepts of Move Semantics
@@ -2799,7 +2799,7 @@ int main() {
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 51. <a id="51">What is the role of the virtual keyword in C++?</a>
+## 46. <a id="46">What is the role of the virtual keyword in C++?</a>
 The `virtual` keyword in C++ is used to support polymorphism and dynamic binding in inheritance hierarchies. It allows derived classes to override base class methods and enables the appropriate function to be called based on the actual object type, rather than the pointer or reference type.
 
 ### Key Roles of the `virtual` Keyword
@@ -2854,7 +2854,7 @@ Derived class show function called.
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 52. <a id="52">How does C++ support exception safety? Explain the concept of RAII.</a>
+## 47. <a id="47">How does C++ support exception safety? Explain the concept of RAII.</a>
 
 C++ supports exception safety through various mechanisms that help manage resources and ensure that the program remains stable and predictable even when exceptions are thrown. One of the primary concepts that enable this is RAII (Resource Acquisition Is Initialization).
 
@@ -2940,7 +2940,7 @@ Resource released.
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 53. <a id="53">What are the differences between static binding and dynamic binding in C++?</a>
+## 48. <a id="48">What are the differences between static binding and dynamic binding in C++?</a>
 | Static Binding                                        | Dynamic Binding                                        |
 |------------------------------------------------------|-------------------------------------------------------|
 | Binding occurs at compile time.                       | Binding occurs at runtime.                            |
@@ -3016,7 +3016,7 @@ Derived class show function called.
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 54. <a id="54">Explain the concept of a const pointer versus a pointer to const in C++.</a>
+## 49. <a id="49">Explain the concept of a const pointer versus a pointer to const in C++.</a>
 In C++, the concepts of **const pointer** and **pointer to const** refer to different aspects of pointer usage and constantness. Here’s a clear explanation of each:
 
 #### Const Pointer
@@ -3045,7 +3045,7 @@ In C++, the concepts of **const pointer** and **pointer to const** refer to diff
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 55. <a id="55">How do you implement operator overloading for a custom class in C++?</a>
+## 50. <a id="50">How do you implement operator overloading for a custom class in C++?</a>
 In C++, operator overloading allows you to define custom behavior for operators when applied to your custom class objects. This is done by defining special functions for the operators you want to overload.
 
 ### Example: Overloading the `+` Operator for a `Complex` Class
@@ -3083,7 +3083,7 @@ int main() {
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 56. <a id="56">What is the purpose of the override keyword in C++11?</a>
+## 51. <a id="51">What is the purpose of the override keyword in C++11?</a>
 The `override` keyword in C++11 serves to explicitly indicate that a member function is intended to override a virtual function from a base class. Its primary purposes are as follows:
 
 ### Why Use It:
@@ -3127,7 +3127,7 @@ In this example, using `override` ensures that the `show` function in the `Deriv
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 57. <a id="57">Explain the concept of typecasting in C++. What are the different types of typecasting?</a>
+## 52. <a id="52">Explain the concept of typecasting in C++. What are the different types of typecasting?</a>
 Typecasting is the process of converting a variable from one data type to another. In C++, typecasting allows for more control over how variables are converted and ensures that the program behaves correctly when mixing different data types.
 
 ### Different Types of Typecasting
@@ -3184,7 +3184,7 @@ Typecasting is the process of converting a variable from one data type to anothe
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 60. <a id="60">What is the difference between a function object and a lambda function in C++?</a>
+## 53. <a id="53">What is the difference between a function object and a lambda function in C++?</a>
 | Aspect                    | Function Object                                      | Lambda Function                                      |
 |---------------------------|------------------------------------------------------|------------------------------------------------------|
 | **Definition**            | A class or struct that overloads the `operator()` to be used like a function. | An anonymous function defined using the `[]` syntax. |
@@ -3227,7 +3227,7 @@ int main() {
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 61. <a id="61">Explain the role of the typeid operator in C++.</a>
+## 54. <a id="54">Explain the role of the typeid operator in C++.</a>
 The typeid operator in C++ is used to determine the type of an expression at runtime. It is particularly useful in the context of polymorphism and dynamic type identification. Here’s a concise explanation of its role:
 
 ### Role of the typeid Operator in C++
@@ -3265,7 +3265,7 @@ Type of basePtr: 7Derived
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 62. <a id="62">How does C++ handle multiple inheritance? What are the challenges and solutions?</a>
+## 55. <a id="55">How does C++ handle multiple inheritance? What are the challenges and solutions?</a>
 C++ allows a class to inherit from multiple base classes, leading to both advantages and challenges.
 
 ### Key Concepts
@@ -3301,7 +3301,7 @@ Implement pure virtual classes to provide flexibility without the complexity of 
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 63. <a id="63">What is the purpose of the volatile keyword in C++?</a>
+## 56. <a id="56">What is the purpose of the volatile keyword in C++?</a>
 The `volatile` keyword in C++ indicates that a variable's value can change unexpectedly, often due to factors outside the program's control. This keyword is essential in situations like:
 
 ### Key Points
@@ -3347,7 +3347,7 @@ In this example, using `volatile` ensures that the `flag` variable is always che
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 64. <a id="64">Explain the difference between the pre-increment and post-increment operators in C++.</a>
+## 57. <a id="57">Explain the difference between the pre-increment and post-increment operators in C++.</a>
 In C++, the increment operators `++` can be used in two forms: **pre-increment** and **post-increment**. Both are used to increase the value of a variable by one, but they differ in how they return the value.
 
 ### Pre-Increment Operator (`++x`)
@@ -3387,7 +3387,7 @@ After post-increment: x = 6, postIncrementResult = 5
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 65. <a id="65">What is the role of the explicit keyword in a constructor in C++?</a>
+## 58. <a id="58">What is the role of the explicit keyword in a constructor in C++?</a>
 The `explicit` keyword in C++ is used in constructors (and conversion operators) to prevent implicit conversions from occurring. When a constructor is declared as `explicit`, it ensures that objects of the class cannot be created automatically from other types, thereby avoiding unintentional conversions that could lead to bugs or unexpected behavior.
 
 ### Key Points
@@ -3424,7 +3424,7 @@ MyClass initialized with value: 30
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 66. <a id="66">Explain the concept of the ternary operator in C++.</a>
+## 59. <a id="59">Explain the concept of the ternary operator in C++.</a>
 The ternary operator in C++ is a shorthand for conditional statements, allowing you to evaluate a condition and return one of two values based on the result. It uses the syntax:
 
 ```cpp
@@ -3456,7 +3456,7 @@ The maximum value is: 20
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 67. <a id="67">What is the difference between the new operator and the new[] operator in C++?</a>
+## 60. <a id="60">What is the difference between the new operator and the new[] operator in C++?</a>
 The `new` operator and `new[]` operator in C++ are both used for dynamic memory allocation, but they serve different purposes and have different syntax and behavior. Here’s a concise overview of their differences:
 
 | Aspect                  | `new` Operator                             | `new[]` Operator                        |
@@ -3505,7 +3505,7 @@ Destructor called!
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 68. <a id="68">Explain the usage and benefits of the constexpr keyword in C++11.</a>
+## 61. <a id="61">Explain the usage and benefits of the constexpr keyword in C++11.</a>
 The `constexpr` keyword in C++11 is used to declare that it is possible to evaluate the value of a function or variable at compile time. This can lead to more efficient code by enabling compile-time computations. Here’s a breakdown of its usage and benefits:
 
 ### Usage
@@ -3558,7 +3558,7 @@ Factorial of 5: 120
 ```
 <a href="#top1">Go to top &#8593;</a>
 
-## 69. <a id="69">Explain the concept of the Rule of Three/Five/Zero in C++.</a>
+## 62. <a id="62">Explain the concept of the Rule of Three/Five/Zero in C++.</a>
 ### Rule of Three
 If a class manages resources (like dynamic memory), you should define:
 1. **Destructor** – To clean up resources.
@@ -3675,93 +3675,93 @@ World!
 
 <a href="#top1">Go to top &#8593;</a>
 
-## 71. <a id="71">How do you handle circular dependencies in C++?</a>
+## 63. <a id="63">How do you handle circular dependencies in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 72. <a id="72">What is the difference between static polymorphism and dynamic polymorphism?</a>
+## 64. <a id="64">What is the difference between static polymorphism and dynamic polymorphism?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 73. <a id="73">Explain the concept of the noexcept specifier in C++.</a>
+## 65. <a id="65">Explain the concept of the noexcept specifier in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 74. <a id="74">How does C++ support multithreading? What are some threading libraries in C++?</a>
+## 66. <a id="66">How does C++ support multithreading? What are some threading libraries in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 75. <a id="75">What is the role of the mutable keyword in C++?</a>
+## 67. <a id="67">What is the role of the mutable keyword in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 76. <a id="76">Explain the concept of the nullptr keyword in C++.</a>
+## 68. <a id="68">Explain the concept of the nullptr keyword in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 77. <a id="77">What is the purpose of the std::move function in C++11?</a>
+## 69. <a id="69">What is the purpose of the std::move function in C++11?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 78. <a id="78">How do you handle resource acquisition and release in C++? Explain the concept of Resource Acquisition Is Initialization (RAII).</a>
+## 70. <a id="70">How do you handle resource acquisition and release in C++? Explain the concept of Resource Acquisition Is Initialization (RAII).</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 79. <a id="79">What is the difference between a constant pointer and a pointer to a constant in C++?</a>
+## 71. <a id="71">What is the difference between a constant pointer and a pointer to a constant in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 80. <a id="80">Explain the concept of the Standard Template Library (STL) in C++.</a>
+## 72. <a id="72">Explain the concept of the Standard Template Library (STL) in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 81. <a id="81">What are the differences between std::vector and std::array in C++?</a>
+## 73. <a id="73">What are the differences between std::vector and std::array in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 82. <a id="82">What is the difference between std::unique_ptr and std::shared_ptr in C++?</a>
+## 74. <a id="74">What is the difference between std::unique_ptr and std::shared_ptr in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 83. <a id="83">Explain the concept of consteval in C++20 and its usage.</a>
+## 75. <a id="75">Explain the concept of consteval in C++20 and its usage.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 84. <a id="84">What is the purpose of the using keyword in C++?</a>
+## 76. <a id="76">What is the purpose of the using keyword in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 85. <a id="85">How do you implement a thread-safe singleton in C++?</a>
+## 77. <a id="77">How do you implement a thread-safe singleton in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 86. <a id="86">Explain the concept of the ternary operator in C++ and its usage.</a>
+## 78. <a id="78">Explain the concept of the ternary operator in C++ and its usage.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 87. <a id="87">What is the role of the constexpr specifier in C++?</a>
+## 79. <a id="79">What is the role of the constexpr specifier in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 88. <a id="88">Explain the concept of the final specifier in C++.</a>
+## 80. <a id="80">Explain the concept of the final specifier in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 89. <a id="89">What is the difference between a raw pointer and a smart pointer in C++?</a>
+## 81. <a id="81">What is the difference between a raw pointer and a smart pointer in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 90. <a id="90">Explain the concept of the auto keyword in C++14 and its usage.</a>
+## 82. <a id="82">Explain the concept of the auto keyword in C++14 and its usage.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 91. <a id="91">What are the differences between std::function and function pointers in C++?</a>
+## 83. <a id="83">What are the differences between std::function and function pointers in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 92. <a id="92">How do you handle memory management in C++ without using smart pointers?</a>
+## 84. <a id="84">How do you handle memory management in C++ without using smart pointers?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 93. <a id="93">Explain the concept of the volatile keyword in C++ and its usage.</a>
+## 85. <a id="85">Explain the concept of the volatile keyword in C++ and its usage.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 94. <a id="94">What is the difference between the struct padding and struct packing in C++?</a>
+## 86. <a id="86">What is the difference between the struct padding and struct packing in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 95. <a id="95">How does C++ support reflection? Are there any reflection mechanisms available?</a>
+## 87. <a id="87">How does C++ support reflection? Are there any reflection mechanisms available?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 96. <a id="96">Explain the concept of the unnamed namespace in C++.</a>
+## 88. <a id="88">Explain the concept of the unnamed namespace in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 97. <a id="97">What is the difference between a template class and a template specialization in C++?</a>
+## 89. <a id="89">What is the difference between a template class and a template specialization in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 98. <a id="98">Explain the concept of SFINAE (Substitution Failure Is Not An Error) in C++.</a>
+## 90. <a id="90">Explain the concept of SFINAE (Substitution Failure Is Not An Error) in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 99. <a id="99">How do you handle file I/O in C++?</a>
+## 91. <a id="91">How do you handle file I/O in C++?</a>
 <a href="#top1">Go to top &#8593;</a>
 
-## 100. <a id="100">Explain the concept of const correctness in C++.</a>
+## 92. <a id="92">Explain the concept of const correctness in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
