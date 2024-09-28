@@ -16,7 +16,7 @@ Soon you guys will find all the important oops interview questions
 13. <a href="#13">What are the differences between pass-by-value and pass-by-reference?</a>
 14. <a href="#14">What is an inline function? When should it be used?</a>
 15. <a href="#15">What is the difference between new and malloc in C++?</a>
-16. <a href="#16">What are the differences between a shallow copy and a deep copy?</a>
+16. <a href="#16">What are the differences between a shallow copy and a deep copy? When would you use each?</a>
 17. <a href="#17">Explain the concept of exception handling in C++.</a>
 18. <a href="#18">What is a namespace? How is it used?</a>
 19. <a href="#19">What are the differences between static and dynamic memory allocation?</a>
@@ -54,8 +54,6 @@ Soon you guys will find all the important oops interview questions
 55. <a href="#55">How do you implement operator overloading for a custom class in C++?</a>
 56. <a href="#56">What is the purpose of the override keyword in C++11?</a>
 57. <a href="#57">Explain the concept of typecasting in C++. What are the different types of typecasting?</a>
-58. <a href="#58">What is the difference between the stack and the heap in C++ memory management?</a>
-59. <a href="#59">Explain the concept of the auto keyword in C++11 and its usage.</a>
 60. <a href="#60">What is the difference between a function object and a lambda function in C++?</a>
 61. <a href="#61">Explain the role of the typeid operator in C++.</a>
 62. <a href="#62">How does C++ handle multiple inheritance? What are the challenges and solutions?</a>
@@ -66,7 +64,6 @@ Soon you guys will find all the important oops interview questions
 67. <a href="#67">What is the difference between the new operator and the new[] operator in C++?</a>
 68. <a href="#68">Explain the usage and benefits of the constexpr keyword in C++11.</a>
 69. <a href="#69">Explain the concept of the Rule of Three/Five/Zero in C++.</a>
-70. <a href="#70">What are the differences between a struct and a class in C++?</a>
 71. <a href="#71">How do you handle circular dependencies in C++?</a>
 72. <a href="#72">What is the difference between static polymorphism and dynamic polymorphism?</a>
 73. <a href="#73">Explain the concept of the noexcept specifier in C++.</a>
@@ -968,7 +965,8 @@ In C++, both `malloc` and `new` are used to get memory while the program is runn
 
 <a href="#top1">Go to top &#8593;</a>
 
-# 16. <a id="16">What are the differences between a shallow copy and a deep copy?</a>
+# 16. <a id="16">What are the differences between a shallow copy and a deep copy? When would you use each? </a>
+
 | Feature        | Shallow Copy                                                   | Deep Copy                                                      |
 |----------------|--------------------------------------------------------------|---------------------------------------------------------------|
 | **Definition**  | Creates a new object, but copies references to the original object's data. | Creates a new object and recursively copies all objects referenced by the original. |
@@ -1045,6 +1043,18 @@ int main() {
     return 0;
 }
 ```
+
+### When to Use Each
+- **Shallow Copy:**
+
+    - Use when the object is simple and contains only primitive data types (like integers, floats, etc.).
+    - Suitable when you want multiple objects to share the same resources (e.g., for caching or shared state).
+
+- **Deep Copy:**
+
+    - Use when the object contains pointers or references to dynamically allocated memory or other objects.
+    - Necessary when you need to ensure that modifications to one object do not affect the other, maintaining independent states.
+
 <a href="#top1">Go to top &#8593;</a>
 
 
@@ -2008,7 +2018,6 @@ Output: Dog barks
 
 
 ## 36. <a id="36">What is the difference between a stack and a heap in memory allocation?</a>
-# Difference Between Stack and Heap in Memory Allocation
 
 | Feature             | **Stack**                                      | **Heap**                                  |
 |---------------------|------------------------------------------------|-------------------------------------------|
@@ -2215,5 +2224,638 @@ int main() {
 ```
 Here, the `explicit` keyword prevents the automatic conversion, forcing you to explicitly create an `Example` object using `Example(10)`.
 
+<a href="#top1">Go to top &#8593;</a>
+
+## 41. <a id="41">How do you implement a copy constructor in C++?</a>
+A copy constructor creates a new object as a copy of an existing object. It copies the values of the original object into the new object.
+
+#### Simple Example:
+Let’s say you have a class `MyClass` with one variable:
+
+```cpp
+class MyClass {
+public:
+    int value;
+
+    // Constructor
+    MyClass(int val) : value(val) {}
+
+    // Copy constructor
+    MyClass(const MyClass &other) {
+        value = other.value;  // Copy the value from the original object
+    }
+};
+```
+
+### How It Works:
+- When you create an object `obj1`, it holds a value.
+- When you copy `obj1` to create `obj2`, the copy constructor is called, and it copies the value from `obj1` to `obj2`.
+
+Usage Example:
+```cpp
+int main() {
+    MyClass obj1(10);        // Create obj1 with value 10
+    MyClass obj2 = obj1;     // Create obj2 as a copy of obj1 (copy constructor is called)
+
+    std::cout << obj1.value << std::endl;  // Output: 10
+    std::cout << obj2.value << std::endl;  // Output: 10
+}
+```
+Both `obj1` and `obj2` will have the same value (10), but they are separate objects.
+<a href="#top1">Go to top &#8593;</a>
+
+## 42. <a id="42">Explain the concept of const member functions in C++.</a>
+In C++, `const` member functions are functions that are guaranteed not to modify the state (i.e., member variables) of the object they belong to. Declaring a member function as const tells the compiler that this function will not change any of the member variables of the object, making it safe to call on const objects.
+
+### Syntax:
+To declare a member function as const, you add the const keyword after the function's parameter list. For example:
+
+```cpp
+class MyClass {
+public:
+    int value;
+
+    MyClass(int val) : value(val) {}
+
+    // Const member function
+    int getValue() const {
+        return value;  // This function cannot modify any member variables
+    }
+
+    // Non-const member function
+    void setValue(int val) {
+        value = val;  // This function modifies the member variable
+    }
+};
+```
+### Explanation:
+- Const member functions promise not to modify the object. They can only be called on const objects.
+- Non-const member functions are allowed to modify the object, and they can only be called on non-const objects.
+
+Example:
+```cpp
+int main() {
+    const MyClass obj1(10);  // obj1 is a constant object, cannot be modified
+    MyClass obj2(20);        // obj2 is a non-constant object, can be modified
+
+    // Call to const member function is allowed
+    std::cout << obj1.getValue() << std::endl;  // Output: 10
+
+    // Call to non-const member function is not allowed on a const object
+    // obj1.setValue(30);  // ERROR: setValue is not const, can't be called on const object
+
+    // Non-const object can call both const and non-const member functions
+    std::cout << obj2.getValue() << std::endl;  // Output: 20
+    obj2.setValue(30);                          // Modifies obj2
+    std::cout << obj2.getValue() << std::endl;  // Output: 30
+
+    return 0;
+}
+```
+<a href="#top1">Go to top &#8593;</a>
+
+## 43. <a id="43">What is the difference between virtual functions and pure virtual functions?</a>
+### Difference Table
+
+| **Virtual Function**                            | **Pure Virtual Function**                         |
+|-------------------------------------------------|--------------------------------------------------|
+| A virtual function has an implementation (a body) in the base class. | A pure virtual function does not have an implementation in the base class and is set to `= 0`. |
+| Derived classes can override a virtual function, but they are not required to do so. | Derived classes must override a pure virtual function; otherwise, the derived class becomes abstract. |
+| You can instantiate objects of the base class if it contains virtual functions. | You cannot instantiate objects of a class with pure virtual functions because the class is abstract. |
+| Virtual functions provide a default behavior that derived classes can inherit if they choose not to override it. | Pure virtual functions force derived classes to provide their own implementation of the function. |
+| Virtual functions allow polymorphism by enabling the program to call the correct function in the derived class at runtime, even if the function is not overridden. | Pure virtual functions enforce polymorphism by ensuring that derived classes define specific behavior, which is called at runtime. |
+
+### Example 1: Virtual Function
+
+```cpp
+#include <iostream>
+
+class Animal {
+public:
+    virtual void sound() {  // Virtual function with a default implementation
+        std::cout << "Some generic animal sound" << std::endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {  // Optional override in derived class
+        std::cout << "Bark!" << std::endl;
+    }
+};
+
+int main() {
+    Animal animal;
+    Dog dog;
+
+    animal.sound();      // Output: "Some generic animal sound"
+    dog.sound();         // Output: "Bark!"
+
+    Animal* ptr = &dog;
+    ptr->sound();        // Output: "Bark!" (polymorphism)
+}
+```
+### Example 2: Pure Virtual Function
+```cpp
+#include <iostream>
+
+class Animal {
+public:
+    virtual void sound() = 0;  // Pure virtual function, no implementation
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {  // Mandatory override in derived class
+        std::cout << "Bark!" << std::endl;
+    }
+};
+
+int main() {
+    // Animal animal;  // ERROR: Cannot instantiate an abstract class
+    Dog dog;
+
+    dog.sound();  // Output: "Bark!"
+
+    Animal* ptr = &dog;
+    ptr->sound(); // Output: "Bark!" (polymorphism)
+}
+```
+<a href="#top1">Go to top &#8593;</a>
+
+## 44. <a id="44">What is the role of the preprocessor in C++?</a>
+The preprocessor in C++ is a tool that processes directives (commands) in the source code before actual compilation. It modifies the code based on these directives, which can include macro definitions, file inclusions, and conditional compilation.
+
+### Role of the Preprocessor in C++
+#### 1. Macro Definition:
+- Defines constants and expressions using #define.
+- Example: `#define PI 3.14.`
+
+#### 2. File Inclusion:
+- Includes header files or other source files using #include.
+- Example: `#include <iostream>.`
+
+#### 3. Conditional Compilation:
+- Compiles code conditionally using directives like #ifdef, #ifndef, #if, etc.
+- Example:
+    ```cpp
+    #ifdef DEBUG
+    // Debug code here
+    #endif
+    ```
+#### 3. Line Control: 
+- Manages line numbers and filenames in error messages with #line.
+#### 4. Removing Comments:
+- Eliminates comments from the code before compilation.
+
+<a href="#top1">Go to top &#8593;</a>
+
+## 45. <a id="45">How do you handle multiple exceptions in C++?</a>
+In C++, you can handle multiple exceptions using a combination of try, catch, and specific exception classes. Here’s a brief overview and some examples:
+
+### Handling Multiple Exceptions in C++
+1. **Single catch Block for Multiple Exceptions:** You can catch multiple exception types in a single catch block by using a base class that is common to those exceptions. This is useful when you want to handle different exceptions in the same way.
+
+    ```cpp
+    #include <iostream>
+    #include <stdexcept>
+
+    void testFunction(int value) {
+        if (value < 0) {
+            throw std::invalid_argument("Negative value");
+        } else if (value == 0) {
+            throw std::runtime_error("Zero value");
+        }
+    }
+
+    int main() {
+        try {
+            testFunction(0);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Caught invalid_argument: " << e.what() << std::endl;
+        } catch (const std::runtime_error& e) {
+            std::cout << "Caught runtime_error: " << e.what() << std::endl;
+        }
+
+        return 0;
+    }
+    ```
+2. **Multiple catch Blocks:** You can have multiple catch blocks to handle different exceptions separately, allowing for more specific error handling.
+
+    ```cpp
+    #include <iostream>
+    #include <stdexcept>
+
+    void testFunction(int value) {
+        if (value < 0) {
+            throw std::invalid_argument("Negative value");
+        } else if (value == 0) {
+            throw std::runtime_error("Zero value");
+        }
+    }
+
+    int main() {
+        try {
+            testFunction(-1);  // Change the argument to test different cases
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Caught invalid_argument: " << e.what() << std::endl;
+        } catch (const std::runtime_error& e) {
+            std::cout << "Caught runtime_error: " << e.what() << std::endl;
+        } catch (const std::exception& e) {
+            std::cout << "Caught generic exception: " << e.what() << std::endl;
+        }
+
+        return 0;
+    }
+    ```
+3. **Catching All Exceptions:** To catch any exception, you can use a catch-all handler by specifying catch (const std::exception& e). This should be placed at the end of the catch blocks to ensure that it captures any exceptions that are not caught by previous blocks.
+
+<a href="#top1">Go to top &#8593;</a>
+
+## 46. <a id="46">Explain the concept of function pointers in C++.</a>
+### What Are Function Pointers?
+- **Function Pointer:** A function pointer is a variable that stores the address of a function. This allows you to call the function indirectly.
+
+### Why Use Function Pointers?
+- **Dynamic Behavior:** They let you decide which function to call at runtime.
+- **Callbacks:** You can pass functions as arguments to other functions, which is useful in certain programming situations (like event handling).
+
+### How to Use Function Pointers
+1. **Declaring a Function Pointer:** To declare a function pointer, specify the return type, followed by `(*pointer_name)(parameter_types)`.
+
+    Example:
+
+    ```cpp
+    void myFunction(int x); // A function that takes an int
+    void (*funcPtr)(int);   // Declaring a pointer to a function that takes an int and returns void
+    ```
+2. **Assigning a Function to a Pointer:** You can assign the address of a function to a function pointer by using the function's name (without parentheses).
+
+    Example:
+
+    ```cpp
+    funcPtr = myFunction; // Assign the address of myFunction to funcPtr
+    ```
+3. **Calling a Function Using a Pointer:** You can call the function through the pointer.
+
+    Example:
+
+    ```cpp
+    funcPtr(10); // This calls myFunction(10)
+    ```
+4. **Passing Function Pointers to Other Functions:** You can pass function pointers as arguments to other functions.
+
+    Example:
+
+    ```cpp
+    void executeFunction(void (*func)(int), int value) {
+        func(value); // Calls the function passed as an argument
+    }
+    ```
+    You can call it like this:
+
+    ```cpp
+    executeFunction(myFunction, 5); // Calls myFunction with the value 5
+    ```
+5. **Returning Function Pointers:** Functions can return pointers to other functions.
+
+    Example:
+
+    ```cpp
+    void (*getFunction())(int) {
+        return myFunction; // Returns the address of myFunction
+    }
+    ```
+
+### Simple Example
+Here’s a simple complete example that shows how to use function pointers:
+
+```cpp
+#include <iostream>
+
+// A simple function that we will point to
+void sayHello(int times) {
+    for (int i = 0; i < times; ++i) {
+        std::cout << "Hello!" << std::endl;
+    }
+}
+
+// Function that takes a function pointer as a parameter
+void executeFunction(void (*func)(int), int value) {
+    func(value); // Calls the passed function with the given value
+}
+
+int main() {
+    // Declare a function pointer
+    void (*funcPtr)(int) = sayHello; // Assign sayHello to funcPtr
+
+    // Call the function using the pointer
+    funcPtr(3); // Calls sayHello(3)
+
+    // Use the function pointer in another function
+    executeFunction(sayHello, 2); // Calls sayHello(2)
+
+    return 0;
+}
+```
+<a href="#top1">Go to top &#8593;</a>
+
+## 47. <a id="47">What is the difference between new and delete operators in C++?</a>
+### Difference Between `new` and `delete` Operators in C++
+
+In C++, `new` and `delete` are operators used for dynamic memory management. Below is a summary of their differences:
+
+| Feature                | `new`                                             | `delete`                                         |
+|------------------------|---------------------------------------------------|-------------------------------------------------|
+| **Purpose**            | Allocates memory for an object or array           | Deallocates memory previously allocated by `new`|
+| **Syntax**             | `new Type` or `new Type[size]`                   | `delete pointer` or `delete[] pointer`         |
+| **Return Value**       | Returns a pointer to the allocated memory         | Does not return any value                       |
+| **Memory Type**        | Allocates memory from the heap                     | Frees memory back to the heap                   |
+| **Constructor Call**   | Calls the constructor for objects being created   | Calls the destructor for objects being deleted   |
+| **Error Handling**     | Throws `std::bad_alloc` on failure                | No error handling (undefined behavior if used on unallocated memory) |
+
+### Example
+
+```cpp
+#include <iostream>
+
+int main() {
+    // Using new to allocate memory for a single integer
+    int* ptr = new int(42); // Allocates memory and initializes it to 42
+    std::cout << "Value: " << *ptr << std::endl; // Output: Value: 42
+
+    // Using new[] to allocate memory for an array of integers
+    int* arr = new int[5]; // Allocates memory for an array of 5 integers
+    for (int i = 0; i < 5; ++i) {
+        arr[i] = i * 10; // Initializing array elements
+    }
+
+    // Displaying array values
+    std::cout << "Array values: ";
+    for (int i = 0; i < 5; ++i) {
+        std::cout << arr[i] << " "; // Output: Array values: 0 10 20 30 40
+    }
+    std::cout << std::endl;
+
+    // Using delete to free memory
+    delete ptr;            // Deallocates memory for the single integer
+    delete[] arr;         // Deallocates memory for the array of integers
+
+    return 0;
+}
+```
+<a href="#top1">Go to top &#8593;</a>
+
+## 48. <a id="48">How does C++ support multithreading? Explain the concept of thread synchronization.</a>
+C++ supports multithreading primarily through its Standard Library, introduced in C++11, which provides a range of tools for creating and managing threads. Below is a brief explanation of how C++ handles multithreading and the concept of thread synchronization.
+
+### Multithreading in C++
+1. **Creating Threads:**
+
+    - C++ provides the`std::thread` class to create and manage threads. You can create a thread by instantiating a `std::thread` object and passing it a function to execute.
+    ```cpp
+    #include <iostream>
+    #include <thread>
+
+    void printMessage() {
+        std::cout << "Hello from the thread!" << std::endl;
+    }
+
+    int main() {
+        std::thread t(printMessage); // Create a new thread
+        t.join();                    // Wait for the thread to finish
+        return 0;
+    }
+    ```
+
+2. **oining and Detaching Threads:**
+
+    - **Join:** The `join()` function blocks the calling thread until the thread represented by the `std::thread` object has finished executing.
+    - **Detach:** The `detach()` function allows the thread to execute independently from the thread handle, allowing the program to continue without waiting.
+
+### Thread Synchronization
+Thread synchronization is crucial in multithreaded programming to prevent data races and ensure that threads can safely access shared resources. Here are some key concepts:
+
+1. **Mutex (Mutual Exclusion):**
+
+    - A mutex is used to protect shared data by allowing only one thread to access the resource at a time.
+    - In C++, you can use `std::mutex` to lock and unlock access to a shared resource.
+
+    ```cpp
+    #include <iostream>
+    #include <thread>
+    #include <mutex>
+
+    std::mutex mtx; // Mutex to protect shared data
+    int sharedData = 0;
+
+    void increment() {
+        mtx.lock(); // Lock the mutex
+        ++sharedData; // Safely increment shared data
+        mtx.unlock(); // Unlock the mutex
+    }
+
+    int main() {
+        std::thread t1(increment);
+        std::thread t2(increment);
+        t1.join();
+        t2.join();
+        std::cout << "Shared Data: " << sharedData << std::endl;
+        return 0;
+    }
+    ```
+2. **Lock Guards:**
+
+    - Instead of manually locking and unlocking mutexes, you can use std::lock_guard to automatically manage the locking scope, ensuring that the mutex is released when the guard goes out of scope.
+
+    ```cpp
+    void increment() {
+        std::lock_guard<std::mutex> lock(mtx); // Lock mutex
+        ++sharedData; // Safely increment shared data
+    }
+    ```
+
+3. **Condition Variables:**
+
+    - `std::condition_variable` allows threads to wait for certain conditions to be met before continuing execution. It is used in conjunction with a mutex.
+
+    ```cpp
+    #include <iostream>
+    #include <thread>
+    #include <mutex>
+    #include <condition_variable>
+
+    std::mutex mtx;
+    std::condition_variable cv;
+    bool ready = false;
+
+    void waitForSignal() {
+        std::unique_lock<std::mutex> lock(mtx);
+        cv.wait(lock, [] { return ready; }); // Wait until ready is true
+        std::cout << "Thread proceeding after signal!" << std::endl;
+    }
+
+    void sendSignal() {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        {
+            std::lock_guard<std::mutex> lock(mtx);
+            ready = true; // Set the condition to true
+        }
+        cv.notify_one(); // Notify one waiting thread
+    }
+
+    int main() {
+        std::thread t1(waitForSignal);
+        std::thread t2(sendSignal);
+        t1.join();
+        t2.join();
+        return 0;
+    }
+    ```
+<a href="#top1">Go to top &#8593;</a>
+
+
+## 50. <a id="50">Explain the concept of move semantics in C++11. How does it improve performance?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 51. <a id="51">What is the role of the virtual keyword in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 52. <a id="52">How does C++ support exception safety? Explain the concept of RAII.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 53. <a id="53">What are the differences between static binding and dynamic binding in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 54. <a id="54">Explain the concept of a const pointer versus a pointer to const in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 55. <a id="55">How do you implement operator overloading for a custom class in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 56. <a id="56">What is the purpose of the override keyword in C++11?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 57. <a id="57">Explain the concept of typecasting in C++. What are the different types of typecasting?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 60. <a id="60">What is the difference between a function object and a lambda function in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 61. <a id="61">Explain the role of the typeid operator in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 62. <a id="62">How does C++ handle multiple inheritance? What are the challenges and solutions?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 63. <a id="63">What is the purpose of the volatile keyword in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 64. <a id="64">Explain the difference between the pre-increment and post-increment operators in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 65. <a id="65">What is the role of the explicit keyword in a constructor in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 66. <a id="66">Explain the concept of the ternary operator in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 67. <a id="67">What is the difference between the new operator and the new[] operator in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 68. <a id="68">Explain the usage and benefits of the constexpr keyword in C++11.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 69. <a id="69">Explain the concept of the Rule of Three/Five/Zero in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 71. <a id="71">How do you handle circular dependencies in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 72. <a id="72">What is the difference between static polymorphism and dynamic polymorphism?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 73. <a id="73">Explain the concept of the noexcept specifier in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 74. <a id="74">How does C++ support multithreading? What are some threading libraries in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 75. <a id="75">What is the role of the mutable keyword in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 76. <a id="76">Explain the concept of the nullptr keyword in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 77. <a id="77">What is the purpose of the std::move function in C++11?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 78. <a id="78">How do you handle resource acquisition and release in C++? Explain the concept of Resource Acquisition Is Initialization (RAII).</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 79. <a id="79">What is the difference between a constant pointer and a pointer to a constant in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 80. <a id="80">Explain the concept of the Standard Template Library (STL) in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 81. <a id="81">What are the differences between std::vector and std::array in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 82. <a id="82">What is the difference between std::unique_ptr and std::shared_ptr in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 83. <a id="83">Explain the concept of consteval in C++20 and its usage.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 84. <a id="84">What is the purpose of the using keyword in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 85. <a id="85">How do you implement a thread-safe singleton in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 86. <a id="86">Explain the concept of the ternary operator in C++ and its usage.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 87. <a id="87">What is the role of the constexpr specifier in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 88. <a id="88">Explain the concept of the final specifier in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 89. <a id="89">What is the difference between a raw pointer and a smart pointer in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 90. <a id="90">Explain the concept of the auto keyword in C++14 and its usage.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 91. <a id="91">What are the differences between std::function and function pointers in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 92. <a id="92">How do you handle memory management in C++ without using smart pointers?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 93. <a id="93">Explain the concept of the volatile keyword in C++ and its usage.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 94. <a id="94">What is the difference between the struct padding and struct packing in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 95. <a id="95">How does C++ support reflection? Are there any reflection mechanisms available?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 96. <a id="96">Explain the concept of the unnamed namespace in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 97. <a id="97">What is the difference between a template class and a template specialization in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 98. <a id="98">Explain the concept of SFINAE (Substitution Failure Is Not An Error) in C++.</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 99. <a id="99">How do you handle file I/O in C++?</a>
+<a href="#top1">Go to top &#8593;</a>
+
+## 100. <a id="100">Explain the concept of const correctness in C++.</a>
 <a href="#top1">Go to top &#8593;</a>
 
